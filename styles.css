@@ -48,7 +48,7 @@
   /* Typography Families: Fraunces (Editorial Warm Serif) + Manrope (Humanist Sans) + Space Mono (Data & Code) */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-mono: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Fluid Spacing Scale */
   --space-2xs: 0.25rem;  /* 4px */
@@ -371,11 +371,10 @@ button, input, select, textarea {
   justify-content: center;
   gap: 0.55rem;
   padding: 0.7rem 1.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--transition-normal);
@@ -608,11 +607,13 @@ button, input, select, textarea {
   background: var(--bg-card);
 }
 .stat-number {
-  font-family: var(--font-mono);
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 2.35rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--text-white);
-  line-height: 1.1;
+  line-height: 1.05;
+  font-feature-settings: 'lnum' 1;
 }
 .stat-label {
   font-family: var(--font-mono);
@@ -830,8 +831,8 @@ button, input, select, textarea {
   background: var(--bg-card);
 }
 .aim-index {
-  font-family: var(--font-mono);
-  font-size: 2.25rem;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--accent-gold);
   line-height: 1;
