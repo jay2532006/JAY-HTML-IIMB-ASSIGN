@@ -3,1232 +3,666 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jay Parmar — Executive Portfolio &amp; Resume Website</title>
-  <meta name="description" content="AI/ML Builder · Quantitative Finance Analyst · Product Leader at IIM Bangalore. Turning complex data into decisions that move.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Google Web Fonts: Fraunces (Editorial Display Serif), Manrope (Humanist Clean Body), Space Mono (Data & Metrics) -->
+  <title>Jay Parmar — Interactive Executive Hero Workstation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Main External Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #060608;
+      color: #f5f1e8;
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .hero-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1.5rem 4rem;
+      position: relative;
+    }
+    .hero-header-nav {
+      width: 100%;
+      max-width: 1320px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .hero-heading-block {
+      text-align: center;
+      max-width: 900px;
+      margin-bottom: 2.2rem;
+    }
+    .hero-title-main {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+    .hero-title-highlight {
+      background: linear-gradient(135deg, #ffffff 20%, #c8a882 70%, #a3e635 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-sub-text {
+      color: #d0cbc0;
+      font-size: 1.12rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    /* 3D Interactive Mac / VS Code Window */
+    .studio-frame {
+      width: 100%;
+      max-width: 1220px;
+      background: #0d0d12;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(200, 168, 130, 0.08);
+      overflow: hidden;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+      perspective: 1200px;
+      position: relative;
+    }
+    .studio-window-bar {
+      background: #14141b;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .window-traffic-lights {
+      display: flex;
+      gap: 8px;
+    }
+    .light-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .window-title {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #8e897f;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .studio-main-grid {
+      display: grid;
+      grid-template-columns: 50px 220px 1fr 280px;
+      min-height: 520px;
+    }
+    /* Column 1: Activity Bar */
+    .activity-bar {
+      background: #101017;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 1.25rem;
+    }
+    .act-icon {
+      color: #8e897f;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .act-icon.active, .act-icon:hover {
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.1);
+    }
+    /* Column 2: File Explorer */
+    .file-explorer {
+      background: #0d0d12;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1rem 0.75rem;
+      font-size: 0.85rem;
+    }
+    .explorer-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8e897f;
+      margin-bottom: 0.75rem;
+      padding-left: 0.5rem;
+    }
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      color: #d0cbc0;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .file-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+    .file-item.active {
+      background: rgba(200, 168, 130, 0.15);
+      color: #f5f1e8;
+      border-left: 2px solid #a3e635;
+    }
+    /* Column 3: Active Editor */
+    .editor-pane {
+      background: #08080a;
+      display: flex;
+      flex-direction: column;
+    }
+    .editor-tabs {
+      background: #0d0d12;
+      display: flex;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .editor-tab {
+      padding: 0.55rem 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #8e897f;
+      background: #08080a;
+      border-top: 2px solid #a3e635;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .code-display {
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      overflow-x: auto;
+      flex: 1;
+      margin: 0;
+    }
+    .line-num {
+      color: #444;
+      margin-right: 1.25rem;
+      user-select: none;
+    }
+    .kwd { color: #ff7b72; font-weight: 600; }
+    .fn { color: #d2a8ff; }
+    .str { color: #a5d6ff; }
+    .prop { color: #79c0ff; }
+    .num { color: #ffa657; }
+    .cmt { color: #8b949e; font-style: italic; }
+
+    /* Action bar underneath editor */
+    .editor-action-bar {
+      background: #0d0d12;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .run-system-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #a3e635 0%, #65a30d 100%);
+      color: #050801;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(163, 230, 53, 0.35);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .run-system-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(163, 230, 53, 0.5);
+      background: #bbf7d0;
+    }
+    .kbd-badge {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+    }
+
+    /* Column 4: Executive Status Panel */
+    .status-panel {
+      background: #101017;
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .panel-widget {
+      background: #161620;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .widget-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #c8a882;
+      margin-bottom: 0.4rem;
+    }
+    .widget-metric {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .widget-tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.5rem;
+    }
+    .tool-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: #d0cbc0;
+    }
+
+    /* Fullscreen 1-100% Telemetry Overlay */
+    .launch-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 6, 8, 0.94);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .launch-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .launch-modal {
+      width: 90%;
+      max-width: 540px;
+      background: #0d0d14;
+      border: 1px solid rgba(163, 230, 53, 0.3);
+      box-shadow: 0 0 50px rgba(163, 230, 53, 0.2);
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .launch-header {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #a3e635;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #a3e635;
+      box-shadow: 0 0 10px #a3e635;
+      animation: pulseDot 1s infinite alternate;
+    }
+    @keyframes pulseDot {
+      from { opacity: 0.4; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1.15); }
+    }
+    .progress-number {
+      font-family: 'Fraunces', serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .progress-bar-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #c8a882 0%, #a3e635 100%);
+      box-shadow: 0 0 15px #a3e635;
+      transition: width 0.04s linear;
+    }
+    .launch-log {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #d0cbc0;
+      min-height: 2.4em;
+      line-height: 1.4;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 900px) {
+      .studio-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .activity-bar, .file-explorer, .status-panel {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body id="top">
-
-  <!-- Interactive Scroll Reading Progress Bar (USP 1) -->
-  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- Ambient Radial Glow Backdrops -->
-  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
-  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
-  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
-
-  <!-- =========================================================================
-       ASSIGNMENT MILESTONE & PROGRESS BANNER
-  ========================================================================= -->
-  
-
-  <!-- =========================================================================
-       STICKY NAVIGATION BAR
-  ========================================================================= -->
-  <header class="site-header" id="navbar">
-    <div class="nav-container">
-      
-      <!-- Brand Logo & Identity -->
-      <a href="#top" class="brand-link" aria-label="Jay Parmar Home">
-        <img src="assets/brand/jay-parmar-mark.webp" alt="Jay Parmar Logo Mark" class="brand-logo-img">
-        <div class="brand-title">
-          <span class="brand-name">Jay Parmar</span>
-          <span class="brand-tagline">IIM Bangalore · DBE</span>
-        </div>
+<body>
+  <div class="hero-page-wrapper">
+    <nav class="hero-header-nav">
+      <a href="index.html" class="brand-link-lockup">
+        <img src="assets/brand/jay-parmar-brand-lockup.jpg" alt="Jay Parmar" class="brand-lockup-img">
       </a>
-
-      <!-- Navigation Links -->
-      <nav class="nav-menu" id="primary-navigation" aria-label="Main Navigation">
-        <a href="#dossier-overview" class="nav-link">Overview</a>
-        <a href="#dossier-education" class="nav-link">Academics</a>
-        <a href="#dossier-experience" class="nav-link">Experience</a>
-        <a href="#dossier-builds" class="nav-link">Systems</a>
-        <a href="#dossier-honors" class="nav-link">Honors</a>
-        <a href="#dossier-credentials" class="nav-link">Credentials</a>
-        <a href="#dossier-skills" class="nav-link">Capabilities</a>
-        <a href="articles.html" class="nav-link">Articles (13)</a>
-        <a href="hero.html" class="nav-link" style="color: #a3e635; font-weight: 700;">Studio Hero ↗</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-
-      <!-- Action Buttons CTA & Interactive Theme Palette Switcher -->
-      <div class="nav-actions">
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme color palette" title="Switch Theme Palette">
-          <span id="theme-name">Obsidian</span> 🎨
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button class="run-system-btn" onclick="executeSystem()" style="font-size: 0.8rem; padding: 0.5rem 1.1rem;">
+          <span>▶ RUN / ENTER</span>
         </button>
-        <a href="assets/portfolio/resume/Jay-Parmar-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <span>Resume PDF</span>
-          <span class="icon-arrow">↗</span>
-        </a>
-        <button class="nav-toggle-btn" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
+        <a href="articles.html" class="btn btn-secondary btn-sm">Read Essays ↗</a>
+      </div>
+    </nav>
+
+    <div class="hero-heading-block">
+      <h1 class="hero-title-main">
+        Turning complex data into <br>
+        <span class="hero-title-highlight">Decisions that move.</span>
+      </h1>
+      <p class="hero-sub-text">
+        Interactive executive developer workstation. Click <strong>EXECUTE / ENTER</strong> or press <code>↵ Enter</code> to run the telemetry sequence and launch the full dossier.
+      </p>
+    </div>
+
+    <!-- Interactive Studio Frame -->
+    <div class="studio-frame" id="studioFrame">
+      <div class="studio-window-bar">
+        <div class="window-traffic-lights">
+          <div class="light-dot dot-red"></div>
+          <div class="light-dot dot-yellow"></div>
+          <div class="light-dot dot-green"></div>
+        </div>
+        <div class="window-title">
+          <span>⚡</span>
+          <span id="activeFileName">jay-parmar.ts</span>
+          <span style="opacity: 0.5;">— Workspace Studio</span>
+        </div>
+        <div style="font-size: 0.75rem; color: #a3e635; font-family: 'JetBrains Mono', monospace;">● Online</div>
       </div>
 
-    </div>
-  </header>
-
-  <!-- =========================================================================
-       MAIN CONTENT CONTAINER
-  ========================================================================= -->
-  <main class="container">
-
-    <!-- =======================================================================
-         HERO SECTION: EXECUTIVE DOSSIER
-    ======================================================================= -->
-    <section class="section hero-section" id="dossier-overview">
-      <div class="hero-grid">
-        
-        <!-- Left: Executive Profile Copy, Highlights & CTAs -->
-        <div class="hero-content reveal-left">
-          <div class="hero-status-pill">
-            <span class="status-indicator-dot"></span>
-            Curriculum Vitae · Executive Dossier
-          </div>
-
-          <h1 class="hero-title">
-            Turning complex data into <br>
-            <span class="hero-title-gradient">decisions that move.</span>
-          </h1>
-
-          <div class="hero-lead-text">
-            <p>
-              I’m <strong>Jay Parmar</strong> — an AI/ML builder, quantitative finance analyst, and product leader pursuing BBA in Digital Business &amp; Entrepreneurship at the <strong>Indian Institute of Management Bangalore (IIMB)</strong>.
-            </p>
-            <p style="margin-top: 0.75rem;">
-              I build useful systems, rally ambitious teams around high-rigor engineering, and stay with the work until it creates verifiable outcomes — from &lt;12ms anti-money laundering screening to offline diagnostic education engines and ₹47.5L supply chain redesigns.
-            </p>
-          </div>
-
-          <!-- Verified Meta Strip -->
-          <div class="hero-meta-strip">
-            <span class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              Bhilai, Chhattisgarh, India
-            </span>
-            <a href="mailto:jaydeepak2532006@gmail.com" class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              jaydeepak2532006@gmail.com
-            </a>
-            <a href="tel:+917773060203" class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              +91 77730 60203
-            </a>
-          </div>
-
-          <!-- Direct Actions -->
-          <div class="hero-actions">
-            <a href="assets/portfolio/resume/Jay-Parmar-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <span>Download Official Resume (PDF)</span>
-              <span class="icon-arrow">↗</span>
-            </a>
-            <a href="#dossier-builds" class="btn btn-secondary">
-              <span>View Shipped Systems (6)</span>
-            </a>
-            <a href="articles.html" class="btn btn-secondary">
-              <span>Read 13 Field Essays ↗</span>
-            </a>
-          </div>
-
-          <!-- 4 KPI Impact Stat Cards with Count-up animation attributes -->
-          <div class="hero-stats-grid">
-            <div class="stat-card reveal-scale stagger-1">
-              <div class="stat-number count-up" data-target="47.5" data-prefix="₹" data-suffix="L">₹47.5L</div>
-              <div class="stat-label">Projected Annual Savings</div>
-            </div>
-            <div class="stat-card reveal-scale stagger-2">
-              <div class="stat-number count-up" data-target="233" data-prefix="" data-suffix="">233</div>
-              <div class="stat-label">Chapters Mapped (EdTech)</div>
-            </div>
-            <div class="stat-card reveal-scale stagger-3">
-              <div class="stat-number count-up" data-target="12" data-prefix="<" data-suffix="ms">&lt;12ms</div>
-              <div class="stat-label">AML Screening Latency</div>
-            </div>
-            <div class="stat-card reveal-scale stagger-4">
-              <div class="stat-number count-up" data-target="3" data-prefix="" data-suffix="×">3×</div>
-              <div class="stat-label">National Podiums</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Executive Portrait Card with Details Strip -->
-        <aside class="hero-portrait-card reveal-right">
-          <div class="portrait-image-wrapper">
-            <img src="assets/portfolio/gallery/gallery-03.jpg" alt="Jay Parmar — IIM Bangalore" class="portrait-img">
-            <div class="portrait-gradient-overlay"></div>
-          </div>
-          <figcaption class="portrait-caption">
-            <div class="caption-header">
-              <div>
-                <h2 class="caption-name">Jay Parmar</h2>
-                <p class="caption-institution">IIM Bangalore · BBA DBE (2026—2029)</p>
-              </div>
-              <span class="verified-tag">Verified</span>
-            </div>
-
-            <div class="caption-meta-grid">
-              <div class="caption-meta-item">
-                <span>Selectivity:</span>
-                <strong>Top 20 / 70,000+</strong>
-              </div>
-              <div class="caption-meta-item">
-                <span>Research:</span>
-                <strong>IIT Guwahati AI Intern</strong>
-              </div>
-              <div class="caption-meta-item">
-                <span>Venture:</span>
-                <strong>₹2L DST-NIDHI Grant</strong>
-              </div>
-              <div class="caption-meta-item">
-                <span>Hackathons:</span>
-                <strong>IIT Bombay, TCS Win</strong>
-              </div>
-            </div>
-          </figcaption>
+      <div class="studio-main-grid">
+        <!-- Activity Bar -->
+        <aside class="activity-bar">
+          <div class="act-icon active" title="Explorer">📁</div>
+          <div class="act-icon" title="Search">🔍</div>
+          <div class="act-icon" title="Source Control">🌿</div>
+          <div class="act-icon" title="Debugger">🐞</div>
         </aside>
 
+        <!-- File Explorer -->
+        <aside class="file-explorer">
+          <div class="explorer-heading">Core Systems</div>
+          <div class="file-item active" onclick="switchFile('profile')">📄 jay-parmar.ts</div>
+          <div class="file-item" onclick="switchFile('iimb')">🎓 iim-bangalore.md</div>
+          <div class="file-item" onclick="switchFile('aml')">🛡️ nextgen-aml.py</div>
+          <div class="file-item" onclick="switchFile('edtech')">🚀 shikshashakti.ai</div>
+          <div class="file-item" onclick="switchFile('fdr')">⚖️ fdr-setu.ts</div>
+        </aside>
+
+        <!-- Editor View -->
+        <main class="editor-pane">
+          <div class="editor-tabs">
+            <div class="editor-tab" id="tabLabel">jay-parmar.ts</div>
+          </div>
+          <pre class="code-display" id="codeContent"><span class="line-num">01</span><span class="kwd">const</span> builder = {
+<span class="line-num">02</span>  <span class="prop">name</span>: <span class="str">"Jay Parmar"</span>,
+<span class="line-num">03</span>  <span class="prop">institution</span>: <span class="str">"IIM Bangalore (BBA DBE)"</span>,
+<span class="line-num">04</span>  <span class="prop">roles</span>: [<span class="str">"AI/ML Builder"</span>, <span class="str">"Quantitative Finance Analyst"</span>],
+<span class="line-num">05</span>  <span class="prop">mission</span>: <span class="str">"Turning complex data into decisions that move"</span>,
+<span class="line-num">06</span>  <span class="prop">trackRecord</span>: {
+<span class="line-num">07</span>    <span class="prop">dstNidhiGrant</span>: <span class="num">200000</span>, <span class="cmt">// ₹2L Government of India Grant</span>
+<span class="line-num">08</span>    <span class="prop">amlLatencyMs</span>: <span class="num">12</span>,     <span class="cmt">// Sub-12ms graph fraud detection</span>
+<span class="line-num">09</span>    <span class="prop">nationalWins</span>: <span class="num">3</span>       <span class="cmt">// IIT Bombay, TCS Foundation, SIH</span>
+<span class="line-num">10</span>  }
+<span class="line-num">11</span>};</pre>
+
+          <!-- Bottom Action Execution Bar -->
+          <div class="editor-action-bar">
+            <button class="run-system-btn" onclick="executeSystem()">
+              <span>▶ EXECUTE / ENTER DOSSIER</span>
+              <span class="kbd-badge">↵ Enter</span>
+            </button>
+            <span style="font-size: 0.78rem; color: #8e897f;">Press Enter or click to compile & launch</span>
+          </div>
+        </main>
+
+        <!-- Executive Status Column -->
+        <aside class="status-panel">
+          <div class="panel-widget">
+            <div class="widget-title">Selected Metric</div>
+            <div class="widget-metric" id="panelMetric">₹47.5L</div>
+            <div style="font-size: 0.8rem; color: #8e897f;" id="panelDesc">Supply chain ROI optimization</div>
+          </div>
+
+          <div class="panel-widget">
+            <div class="widget-title">Tech Stack Core</div>
+            <div class="widget-tag-strip">
+              <span class="tool-tag">Python</span>
+              <span class="tool-tag">FastAPI</span>
+              <span class="tool-tag">XGBoost</span>
+              <span class="tool-tag">Neo4j GNN</span>
+              <span class="tool-tag">React</span>
+              <span class="tool-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="panel-widget">
+            <div class="widget-title">Terminal Stream</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #a3e635; line-height: 1.4;">
+              $ git status<br>
+              branch: main<br>
+              status: clean (0ms lag)
+            </div>
+          </div>
+        </aside>
       </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 1: ACADEMIC RIGOR & PHILOSOPHY
-    ======================================================================= -->
-    <section class="section" id="dossier-education">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">01 / Academic Rigor &amp; Philosophy</span>
-        <h2 class="section-title">Institutional Foundations &amp; Guiding Aims</h2>
-        <p class="section-description">
-          Grounding technology in institutional discipline, quantitative finance, and high-impact public service.
-        </p>
-      </header>
-
-      <div class="academics-grid">
-        
-        <!-- IIM Bangalore Feature Card -->
-        <article class="education-card reveal-left">
-          <div>
-            <div class="education-tag-row">
-              <span class="education-badge">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                Higher Education
-              </span>
-              <span class="education-period">2026 – 2029</span>
-            </div>
-            
-            <h3 class="education-degree">BBA, Digital Business &amp; Entrepreneurship (DBE)</h3>
-            <p class="education-institution">Indian Institute of Management Bangalore (IIMB)</p>
-          </div>
-
-          <div>
-            <h4 class="education-highlights-header">Selectivity &amp; Distinctions:</h4>
-            <ul class="highlights-list">
-              <li class="highlights-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                <span>Selected into the Top 20 nationally at the Young Leadership Summit, IIM Bangalore (from 70,000+ applicants).</span>
-              </li>
-              <li class="highlights-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                <span>National Finalist at SIPS 2026 (IIM Bangalore) and AVANT B-Plan Competition (IIM Indore).</span>
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Three Guiding Aims Column -->
-        <div class="aims-column">
-          
-          <div class="aim-card reveal-right stagger-1">
-            <span class="aim-index">01</span>
-            <div>
-              <h3 class="aim-title">Build useful intelligence</h3>
-              <p class="aim-desc">
-                Ship AI and analytics systems that solve concrete bottlenecks — from &lt;12ms AML triage to offline prerequisite mapping in rural classrooms.
-              </p>
-            </div>
-          </div>
-
-          <div class="aim-card reveal-right stagger-2">
-            <span class="aim-index">02</span>
-            <div>
-              <h3 class="aim-title">Create from India, for the world</h3>
-              <p class="aim-desc">
-                Prove that high-rigor product engineering, financial modeling, and institutional-grade software can emerge out of Bhilai and IIM Bangalore.
-              </p>
-            </div>
-          </div>
-
-          <div class="aim-card reveal-right stagger-3">
-            <span class="aim-index">03</span>
-            <div>
-              <h3 class="aim-title">Grow through service</h3>
-              <p class="aim-desc">
-                Stay accountable to real outcomes — coordinating placement drives, incubation cohorts, and public-interest disaster pipelines alongside technical builds.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 2: PROFESSIONAL EXPERIENCE & LEADERSHIP
-    ======================================================================= -->
-    <section class="section" id="dossier-experience">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">02 / Proven Track Record</span>
-        <h2 class="section-title">Professional Experience &amp; Leadership</h2>
-        <p class="section-description">
-          4 verified institutional and founder engagements with verified budgets, data pipelines, and corporate stakeholders.
-        </p>
-      </header>
-
-      <div class="experience-grid">
-        
-        <!-- Experience Card 1 -->
-        <article class="experience-card reveal-left stagger-1">
-          <div>
-            <div class="experience-top-row">
-              <span class="experience-period-badge">2025 — Present</span>
-              <span class="experience-location">Remote / Guwahati</span>
-            </div>
-            <h3 class="experience-role">AI &amp; Disaster Analytics Intern</h3>
-            <p class="experience-org">Center for Disaster Management, IIT Guwahati</p>
-            <p class="experience-summary">
-              Built automated data pipelines consolidating social media streams, government advisories, and public-source datasets into real-time risk-monitoring dashboards.
-            </p>
-          </div>
-          <div class="experience-bullets">
-            <div class="experience-bullet">
-              Designed automated ETL pipelines ingesting social, government, and open public feeds into live risk-monitoring dashboards.
-            </div>
-            <div class="experience-bullet">
-              Curated and structured NLP-ready pre-disaster preparedness datasets for early-warning and situational analysis.
-            </div>
-          </div>
-        </article>
-
-        <!-- Experience Card 2 -->
-        <article class="experience-card reveal-right stagger-2">
-          <div>
-            <div class="experience-top-row">
-              <span class="experience-period-badge">2025 — Present</span>
-              <span class="experience-location">Bhilai, India</span>
-            </div>
-            <h3 class="experience-role">Founder &amp; Product Lead</h3>
-            <p class="experience-org">ShikshaShakti.AI</p>
-            <p class="experience-summary">
-              Built an offline-first adaptive learning platform and prerequisite diagnostic engine funded by a ₹2L DST-NIDHI ignition grant.
-            </p>
-          </div>
-          <div class="experience-bullets">
-            <div class="experience-bullet">
-              Architected question-generation and diagnostic engine powered by Claude API spanning 233 chapters and 157 prerequisite relationships.
-            </div>
-            <div class="experience-bullet">
-              Engineered offline-first delivery model tailored for low-bandwidth classrooms, reaching TRL 4 with ₹2L DST-NIDHI grant backing.
-            </div>
-          </div>
-        </article>
-
-        <!-- Experience Card 3 -->
-        <article class="experience-card reveal-left stagger-3">
-          <div>
-            <div class="experience-top-row">
-              <span class="experience-period-badge">2024 — 2025</span>
-              <span class="experience-location">Bhilai, India</span>
-            </div>
-            <h3 class="experience-role">Core Coordinator, Event &amp; Logistics Management</h3>
-            <p class="experience-org">CSVTU-FORTE DST-NIDHI i-TBI</p>
-            <p class="experience-summary">
-              Led vendor coordination and budget-conscious execution across startup incubation cohorts and mentoring programs.
-            </p>
-          </div>
-          <div class="experience-bullets">
-            <div class="experience-bullet">
-              Managed vendor negotiations, procurement timelines, and end-to-end event logistics across incubation and mentoring programs.
-            </div>
-            <div class="experience-bullet">
-              Tracked budgets against financial plan, flagged cost variances early, and maintained stakeholder reporting.
-            </div>
-          </div>
-        </article>
-
-        <!-- Experience Card 4 -->
-        <article class="experience-card reveal-right stagger-4">
-          <div>
-            <div class="experience-top-row">
-              <span class="experience-period-badge">2024 — 2025</span>
-              <span class="experience-location">Bhilai, India</span>
-            </div>
-            <h3 class="experience-role">Company Outreach Lead &amp; Event Coordinator</h3>
-            <p class="experience-org">Training &amp; Placement Cell, CSVTU Bhilai</p>
-            <p class="experience-summary">
-              Coordinated corporate outreach, vocational training allocations, and placement drive operations across students, faculty, and hiring partners.
-            </p>
-          </div>
-          <div class="experience-bullets">
-            <div class="experience-bullet">
-              Spearheaded company outreach and onboarding for campus placement and vocational training drives.
-            </div>
-            <div class="experience-bullet">
-              Synchronized scheduling, logistics, and communication between student cohorts, faculty coordinators, and corporate recruiters.
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 3: SHIPPED SYSTEMS & CASE STUDIES
-    ======================================================================= -->
-    <section class="section" id="dossier-builds">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">03 / Engineering &amp; Products</span>
-        <h2 class="section-title">6 Shipped Systems &amp; Case Studies</h2>
-        <p class="section-description">
-          Quantitative supply chain redesigns, anti-money laundering graphs, adaptive EdTech, and regulatory infrastructure.
-        </p>
-      </header>
-
-      <!-- Module 6 Interactive Project Filtering Bar -->
-      <div class="project-filter-bar reveal" role="toolbar" aria-label="Filter portfolio projects">
-        <button type="button" class="project-filter-btn active" data-filter="all" aria-pressed="true">All Case Studies (6)</button>
-        <button type="button" class="project-filter-btn" data-filter="ai" aria-pressed="false">AI &amp; Machine Learning (2)</button>
-        <button type="button" class="project-filter-btn" data-filter="fintech" aria-pressed="false">FinTech &amp; AML (3)</button>
-        <button type="button" class="project-filter-btn" data-filter="fullstack" aria-pressed="false">Full-Stack Platforms (3)</button>
-        <button type="button" class="project-filter-btn" data-filter="design" aria-pressed="false">Product Design (1)</button>
-      </div>
-
-      <div class="projects-grid">
-        
-        <!-- Project 1: ShikshaShakti -->
-        <article class="project-card reveal-scale stagger-1" data-category="ai edtech fullstack">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-33.webp" alt="ShikshaShakti.AI Preview" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">EdTech · Founder</span>
-              <span class="project-year">2025</span>
-            </div>
-            <h3 class="project-title">ShikshaShakti.AI</h3>
-            <div class="project-metric-pill">233 chapters mapped</div>
-            <p class="project-summary">
-              Offline-first adaptive learning platform that maps prerequisite gaps before generating targeted questions for students in low-bandwidth classrooms.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">233 chapters mapped</div>
-              <div class="project-metric-item">157 prerequisite links</div>
-              <div class="project-metric-item">₹2L DST-NIDHI grant</div>
-              <div class="project-metric-item">TRL 4 validated</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">Claude API</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Knowledge Graph</span>
-            </div>
-            <div class="project-action-row">
-              <a href="https://drive.google.com/file/d/1KB5ZEOAgdl6hEC4cCXVQ1u9I0FcxkGHx/view" target="_blank" rel="noopener noreferrer" class="project-link">
-                <span>Open Case Deck</span>
-                <span>↗</span>
-              </a>
-              <span class="project-year">₹2L DST-NIDHI</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2: PackEdge -->
-        <article class="project-card reveal-scale stagger-2" data-category="design packaging">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-25.webp" alt="PackEdge Packaging Redesign" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">Supply Chain · 1st Place</span>
-              <span class="project-year">2025</span>
-            </div>
-            <h3 class="project-title">PackEdge</h3>
-            <div class="project-metric-pill">₹47.5L projected annual savings</div>
-            <p class="project-summary">
-              Partial knock-down (PKD) packaging and logistics redesign developed for Godrej Interio to maximize truck loadability and cut freight costs.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">₹47.5L projected annual savings</div>
-              <div class="project-metric-item">18.5% less volume</div>
-              <div class="project-metric-item">33% freight reduction</div>
-              <div class="project-metric-item">25% higher loadability</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">ROI Modeling</span>
-              <span class="tech-tag">Excel</span>
-              <span class="tech-tag">Supply Chain</span>
-              <span class="tech-tag">Unit Economics</span>
-            </div>
-            <div class="project-action-row">
-              <a href="https://drive.google.com/file/d/198jU7tjaPgLchEVKDLTQ7UO2OzyOkM91/view" target="_blank" rel="noopener noreferrer" class="project-link">
-                <span>Open Case Deck</span>
-                <span>↗</span>
-              </a>
-              <span class="project-year">Techfest IIT Bombay</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3: NextGenAML -->
-        <article class="project-card reveal-scale stagger-3" data-category="fintech fullstack compliance">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-35.webp" alt="NextGenAML Screening Engine" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">FinTech · National Winner</span>
-              <span class="project-year">2025</span>
-            </div>
-            <h3 class="project-title">NextGenAML</h3>
-            <div class="project-metric-pill">&lt;12ms screening latency</div>
-            <p class="project-summary">
-              Real-time anti-money-laundering screening engine combining Graph Neural Networks, XGBoost, FATF typologies, and LLM-assisted case triage.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">&lt;12ms screening latency</div>
-              <div class="project-metric-item">0.78 ROC-AUC score</div>
-              <div class="project-metric-item">GNN + XGBoost + FATF rules</div>
-              <div class="project-metric-item">LLM-assisted case triage</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">GNN</span>
-              <span class="tech-tag">XGBoost</span>
-              <span class="tech-tag">Neo4j</span>
-              <span class="tech-tag">FastAPI</span>
-            </div>
-            <div class="project-action-row">
-              <span class="project-category">TCS Foundation Winner</span>
-              <span class="project-year">NIT Trichy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4: FDR-Setu -->
-        <article class="project-card reveal-scale stagger-4" data-category="fullstack regtech">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-32.webp" alt="FDR-Setu Regulatory Platform" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">RegTech · SIH 2026</span>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">FDR-Setu</h3>
-            <div class="project-metric-pill">55 REST endpoints · 26 tables</div>
-            <p class="project-summary">
-              Regulatory infrastructure layer for the institutional security-deposit lifecycle featuring two-phase settlement and an audit-first architecture.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">55 REST endpoints</div>
-              <div class="project-metric-item">26-table data model</div>
-              <div class="project-metric-item">Two-phase settlement</div>
-              <div class="project-metric-item">Role-based audit workflows</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">SQL</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Audit Architecture</span>
-            </div>
-            <div class="project-action-row">
-              <span class="project-category">SIH 2026 AICTE</span>
-              <span class="project-year">2026</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 5: CryptoTrace LEA -->
-        <article class="project-card reveal-scale stagger-5" data-category="fintech fullstack web3">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-10.webp" alt="CryptoTrace LEA Workspace" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">Web3 Forensics · MHA PS</span>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">CryptoTrace LEA</h3>
-            <div class="project-metric-pill">129/129 tests passing</div>
-            <p class="project-summary">
-              Multi-chain cryptocurrency fraud attribution and investigation workspace built for law enforcement agencies with a 7-component risk scoring engine.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">129/129 tests passing</div>
-              <div class="project-metric-item">7-component risk score</div>
-              <div class="project-metric-item">Multi-chain attribution</div>
-              <div class="project-metric-item">MHA Problem Statement 26183</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Graph Analytics</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Web3 Forensics</span>
-            </div>
-            <div class="project-action-row">
-              <span class="project-category">SIH 2026 Finalist</span>
-              <span class="project-year">2026</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 6: Real-time Fraud Alerts -->
-        <article class="project-card reveal-scale stagger-6" data-category="ai fintech">
-          <div class="project-img-box">
-            <img src="assets/carousel/carousel-24.webp" alt="Real-time Fraud Alerts" class="project-img">
-          </div>
-          <div class="project-card-body">
-            <div class="project-category-row">
-              <span class="project-category">Fraud Prevention · 2× Finalist</span>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">Real-time Fraud Alerts</h3>
-            <div class="project-metric-pill">2× National Finalist</div>
-            <p class="project-summary">
-              Active transaction defence layer that pauses suspicious payments in flight and triggers instant multilingual verification voice calls via Sarvam AI.
-            </p>
-            <div class="project-metrics-list">
-              <div class="project-metric-item">Real-time transaction pause</div>
-              <div class="project-metric-item">Multilingual voice alerts (Sarvam AI)</div>
-              <div class="project-metric-item">MUJ Hack 4.0 Finalist</div>
-              <div class="project-metric-item">Fintechstico 2026, NSUT Delhi</div>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="tech-stack-row">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Sarvam AI</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">ML Risk Scoring</span>
-            </div>
-            <div class="project-action-row">
-              <span class="project-category">2× Finalist</span>
-              <span class="project-year">2026</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 4: NATIONAL HONORS & RANKINGS
-    ======================================================================= -->
-    <section class="section" id="dossier-honors">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">04 / Recognition</span>
-        <h2 class="section-title">National Honors &amp; Rankings</h2>
-        <p class="section-description">
-          Competitive victories and national selections across premier institutions.
-        </p>
-      </header>
-
-      <div class="honors-grid">
-        
-        <article class="honor-card reveal stagger-1">
-          <div>
-            <div class="honor-index">01</div>
-            <h3 class="honor-title">National Winner — TCS Foundation 36-Hour Hackathon</h3>
-            <p class="honor-venue">NIT Tiruchirappalli (2025)</p>
-          </div>
-          <p class="honor-detail">
-            First place nationally for NextGenAML real-time transaction screening engine.
-          </p>
-        </article>
-
-        <article class="honor-card reveal stagger-2">
-          <div>
-            <div class="honor-index">02</div>
-            <h3 class="honor-title">1st Position — PackEdge Supply Chain Challenge</h3>
-            <p class="honor-venue">Techfest, IIT Bombay (2025)</p>
-          </div>
-          <p class="honor-detail">
-            Winner for Godrej Interio partial knock-down packaging redesign (₹47.5L projected annual savings).
-          </p>
-        </article>
-
-        <article class="honor-card reveal stagger-3">
-          <div>
-            <div class="honor-index">03</div>
-            <h3 class="honor-title">Hack-LLM Winner</h3>
-            <p class="honor-venue">IIIT Delhi (2025)</p>
-          </div>
-          <p class="honor-detail">
-            Awarded top honors for applied LLM systems engineering and prompt optimization.
-          </p>
-        </article>
-
-        <article class="honor-card reveal stagger-4">
-          <div>
-            <div class="honor-index">04</div>
-            <h3 class="honor-title">Top 100 in India — iDEA 2.0 AML Challenge</h3>
-            <p class="honor-venue">Union Bank of India (2025)</p>
-          </div>
-          <p class="honor-detail">
-            Selected among the top 100 teams nationwide for anti-money-laundering algorithmic innovation.
-          </p>
-        </article>
-
-        <article class="honor-card reveal stagger-5">
-          <div>
-            <div class="honor-index">05</div>
-            <h3 class="honor-title">Top 20 — Young Leadership Summit</h3>
-            <p class="honor-venue">IIM Bangalore (2026)</p>
-          </div>
-          <p class="honor-detail">
-            Selected into the top 20 nationally from over 70,000+ applicants across Indian higher education institutions.
-          </p>
-        </article>
-
-        <article class="honor-card reveal stagger-6">
-          <div>
-            <div class="honor-index">06</div>
-            <h3 class="honor-title">5× National Finalist across Flagship Hackathons &amp; B-Plans</h3>
-            <p class="honor-venue">IIT BHU · NSUT Delhi · IIM Indore · IIM Bangalore · MUJ</p>
-          </div>
-          <p class="honor-detail">
-            Finalist at SANGYAN (IIT BHU), MUJ Hack 4.0, Fintechstico 2026 (NSUT Delhi), AVANT B-Plan (IIM Indore), and SIPS 2026 (IIM Bangalore).
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 5: VERIFIED CREDENTIALS & CERTIFICATES
-    ======================================================================= -->
-    <section class="section" id="dossier-credentials">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">05 / Verified Credentials</span>
-        <h2 class="section-title">Certifications &amp; Licenses</h2>
-        <p class="section-description">
-          Click any certificate to view the verified credential document.
-        </p>
-      </header>
-
-      <div class="certificates-grid">
-        
-        <a href="assets/portfolio/certificates/cert-01.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-1">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-01.jpg" alt="PackEdge — 1st Position Techfest IIT Bombay" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">PackEdge — 1st Position</h3>
-            <div class="certificate-meta-row">
-              <span>Techfest, IIT Bombay</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="assets/portfolio/certificates/cert-02.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-2">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-02.jpg" alt="National Hackathon — First Place TCS Foundation" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">National Hackathon — First Place</h3>
-            <div class="certificate-meta-row">
-              <span>TCS Foundation × NIT Trichy</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="assets/portfolio/certificates/cert-05.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-3">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-05.jpg" alt="Drone Technology E-SDP Ministry of MSME" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">Drone Technology E-SDP</h3>
-            <div class="certificate-meta-row">
-              <span>Ministry of MSME, Govt of India</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="assets/portfolio/certificates/cert-03.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-4">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-03.jpg" alt="GitHub Dev Days Rungta RISU" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">GitHub Dev Days</h3>
-            <div class="certificate-meta-row">
-              <span>Rungta International Skills University</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="assets/portfolio/certificates/cert-06.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-5">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-06.jpg" alt="Recruitment Drive Appreciation Codelent" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">Recruitment Drive Appreciation</h3>
-            <div class="certificate-meta-row">
-              <span>Codelent Technologies</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="assets/portfolio/certificates/cert-07.jpg" target="_blank" rel="noopener noreferrer" class="certificate-card reveal-scale stagger-6">
-          <div class="certificate-img-box">
-            <img src="assets/portfolio/certificates/cert-07.jpg" alt="VLSI Workshop Electromos IIT Bhilai" class="certificate-img">
-          </div>
-          <div class="certificate-info">
-            <h3 class="certificate-title">VLSI Workshop</h3>
-            <div class="certificate-meta-row">
-              <span>Electromos × IIT Bhilai</span>
-              <span>2025</span>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 6: COMPREHENSIVE CAPABILITIES & SKILLS MATRIX
-    ======================================================================= -->
-    <section class="section" id="dossier-skills">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">06 / Tooling &amp; Stack</span>
-        <h2 class="section-title">Comprehensive Capabilities Matrix</h2>
-        <p class="section-description">
-          Structured across data modeling, financial analysis, AI architectures, engineering, and operations.
-        </p>
-      </header>
-
-      <div class="skills-matrix-grid">
-        
-        <!-- Category 1 -->
-        <div class="skill-category-card reveal stagger-1">
-          <div class="skill-cat-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            <span>Data &amp; Reporting</span>
-          </div>
-          <div class="skill-pill-container">
-            <span class="skill-pill">Power BI</span>
-            <span class="skill-pill">Excel</span>
-            <span class="skill-pill">Data Pipelines</span>
-            <span class="skill-pill">Financial Analysis</span>
-            <span class="skill-pill">ROI Modeling</span>
-            <span class="skill-pill">KPI Definition</span>
-            <span class="skill-pill">Dashboard Design</span>
-          </div>
-        </div>
-
-        <!-- Category 2 -->
-        <div class="skill-category-card reveal stagger-2">
-          <div class="skill-cat-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-            <span>AI &amp; Tools</span>
-          </div>
-          <div class="skill-pill-container">
-            <span class="skill-pill">Claude API</span>
-            <span class="skill-pill">LLM Fine-Tuning</span>
-            <span class="skill-pill">Machine Learning</span>
-            <span class="skill-pill">GNN</span>
-            <span class="skill-pill">NLP</span>
-            <span class="skill-pill">XGBoost</span>
-            <span class="skill-pill">GenAI Apps</span>
-          </div>
-        </div>
-
-        <!-- Category 3 -->
-        <div class="skill-category-card reveal stagger-3">
-          <div class="skill-cat-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            <span>Engineering</span>
-          </div>
-          <div class="skill-pill-container">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">FastAPI</span>
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">Neo4j</span>
-            <span class="skill-pill">SQL</span>
-            <span class="skill-pill">REST APIs</span>
-          </div>
-        </div>
-
-        <!-- Category 4 -->
-        <div class="skill-category-card reveal stagger-4">
-          <div class="skill-cat-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            <span>Business</span>
-          </div>
-          <div class="skill-pill-container">
-            <span class="skill-pill">Budget Tracking</span>
-            <span class="skill-pill">Vendor Coordination</span>
-            <span class="skill-pill">Stakeholder Mgmt</span>
-            <span class="skill-pill">Cross-Functional</span>
-          </div>
-        </div>
-
-        <!-- Category 5 -->
-        <div class="skill-category-card reveal stagger-5">
-          <div class="skill-cat-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Productivity</span>
-          </div>
-          <div class="skill-pill-container">
-            <span class="skill-pill">Microsoft Excel</span>
-            <span class="skill-pill">PowerPoint</span>
-            <span class="skill-pill">Word</span>
-            <span class="skill-pill">Outlook</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 7: FIELD ESSAYS PREVIEW
-    ======================================================================= -->
-    <section class="section" id="dossier-essays">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">07 / Long-Form Writing</span>
-        <h2 class="section-title">Selected Field Essays &amp; Notes</h2>
-        <p class="section-description">
-          13 essays on AI systems, digital sovereignty, healthcare AI governance, and institutional leadership.
-        </p>
-      </header>
-
-      <div class="essays-grid">
-        
-        <article class="essay-card reveal stagger-1">
-          <div>
-            <div class="essay-top">
-              <span class="essay-category">Leadership</span>
-              <span class="essay-read-time">4 min read</span>
-            </div>
-            <h3 class="essay-title">Influencing Without Authority</h3>
-            <p class="essay-dek">
-              What Florence Nightingale teaches us about clarity, evidence and moving a room when the title is not yours.
-            </p>
-            <div class="essay-quote">
-              “Nightingale did not out-rank the colonel. She out-clarified him.”
-            </div>
-          </div>
-          <a href="articles.html#influencing-without-authority" class="essay-footer-link">
-            <span>Read Complete Essay</span>
-            <span>↗</span>
-          </a>
-        </article>
-
-        <article class="essay-card reveal stagger-2">
-          <div>
-            <div class="essay-top">
-              <span class="essay-category">AI &amp; Strategy</span>
-              <span class="essay-read-time">13 min read</span>
-            </div>
-            <h3 class="essay-title">Digital Sovereignty in the Age of AI</h3>
-            <p class="essay-dek">
-              The invisible dependency that could define the next global power shift—and why resilience matters more than isolation.
-            </p>
-            <div class="essay-quote">
-              “The goal is not disconnection. It is avoiding total dependence on infrastructure you cannot control.”
-            </div>
-          </div>
-          <a href="articles.html#digital-sovereignty-ai" class="essay-footer-link">
-            <span>Read Complete Essay</span>
-            <span>↗</span>
-          </a>
-        </article>
-
-        <article class="essay-card reveal stagger-3">
-          <div>
-            <div class="essay-top">
-              <span class="essay-category">Healthcare</span>
-              <span class="essay-read-time">8 min read</span>
-            </div>
-            <h3 class="essay-title">Healthcare AI: Build Fast, Scale Safely</h3>
-            <p class="essay-dek">
-              Risk-based regulation, clinical co-creation and designing for the 99%—a field note on trustworthy healthcare AI.
-            </p>
-            <div class="essay-quote">
-              “In healthcare, regulation should be the runway that lets innovation take off safely.”
-            </div>
-          </div>
-          <a href="articles.html#healthcare-ai-governance" class="essay-footer-link">
-            <span>Read Complete Essay</span>
-            <span>↗</span>
-          </a>
-        </article>
-
-      </div>
-
-      <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
-        <a href="articles.html" class="btn btn-secondary">
-          <span>Explore All 13 Field Essays &amp; Research Notes</span>
-          <span class="icon-arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =======================================================================
-         CHAPTER 8: CONTACT & DIRECT INQUIRIES
-    ======================================================================= -->
-    <section class="section" id="contact">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">08 / Let's Connect</span>
-        <h2 class="section-title">Inquiries &amp; Collaboration</h2>
-        <p class="section-description">
-          Open to research collaborations, startup advisory, and institutional initiatives.
-        </p>
-      </header>
-
-      <div class="contact-section-grid">
-        
-        <!-- Left: Verified Contact Information -->
-        <div class="contact-info-panel reveal-left">
-          <div class="contact-card-box">
-            
-            <div class="contact-item-row">
-              <div class="contact-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div class="contact-meta-content">
-                <strong>Email Address</strong>
-                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                  <a href="mailto:jaydeepak2532006@gmail.com">jaydeepak2532006@gmail.com</a>
-                  <button type="button" class="copy-email-btn" data-email="jaydeepak2532006@gmail.com" title="Copy email address" style="padding: 2px 8px; font-size: 0.72rem; border-radius: 4px; background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary); cursor: pointer;">📋 Copy</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-item-row">
-              <div class="contact-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </div>
-              <div class="contact-meta-content">
-                <strong>Direct Mobile</strong>
-                <a href="tel:+917773060203">+91 77730 60203</a>
-              </div>
-            </div>
-
-            <div class="contact-item-row">
-              <div class="contact-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              </div>
-              <div class="contact-meta-content">
-                <strong>Base Location</strong>
-                <span>Bhilai, Chhattisgarh, India (IST UTC+5:30)</span>
-              </div>
-            </div>
-
-            <div class="contact-item-row">
-              <div class="contact-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </div>
-              <div class="contact-meta-content">
-                <strong>LinkedIn Network</strong>
-                <a href="https://www.linkedin.com/in/jay-parmar-ai" target="_blank" rel="noopener noreferrer">linkedin.com/in/jay-parmar-ai ↗</a>
-              </div>
-            </div>
-
-            <div class="contact-item-row">
-              <div class="contact-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </div>
-              <div class="contact-meta-content">
-                <strong>GitHub Codebases</strong>
-                <a href="https://github.com/jay2532006" target="_blank" rel="noopener noreferrer">github.com/jay2532006 ↗</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right: Modern Styled Contact Form -->
-        <div class="contact-form-panel reveal-right">
-          <h3 class="form-title">Send a Direct Message</h3>
-          <p class="form-desc">
-            Use this form to initiate conversation. This form demonstrates CSS styling of inputs, focus states, and box-sizing.
-          </p>
-
-          <form action="mailto:jaydeepak2532006@gmail.com" method="post" enctype="text/plain">
-            <div class="form-row-2">
-              <div class="form-group">
-                <label for="c-name" class="form-label">Your Name</label>
-                <input type="text" id="c-name" name="name" class="form-input" required placeholder="e.g. Anand Mahindra">
-              </div>
-              <div class="form-group">
-                <label for="c-email" class="form-label">Email Address</label>
-                <input type="email" id="c-email" name="email" class="form-input" required placeholder="e.g. anand@mahindra.com">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="c-subject" class="form-label">Inquiry Purpose</label>
-              <select id="c-subject" name="subject" class="form-select">
-                <option value="Research & Venture Collaboration">Research &amp; Venture Collaboration</option>
-                <option value="AI & FinTech Advisory">AI &amp; FinTech Advisory</option>
-                <option value="Speaking / Panel Invitation">Speaking / Panel Invitation</option>
-                <option value="General Academic Inquiry">General Academic Inquiry</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="c-message" class="form-label">Detailed Proposal / Message</label>
-              <textarea id="c-message" name="message" class="form-textarea" required placeholder="Share the scope, timeline, and outcome you would like to explore..."></textarea>
-            </div>
-
-            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
-              <button type="submit" class="btn btn-primary">
-                <span>Dispatch Inquiry</span>
-                <span class="icon-arrow">→</span>
-              </button>
-              <button type="reset" class="btn btn-secondary">
-                <span>Reset</span>
-              </button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- =========================================================================
-       FOOTER
-  ========================================================================= -->
-  <footer class="site-footer">
-    <div class="container">
-      
-      <div class="footer-grid">
-        
-        <div class="footer-brand-col">
-          <h3 class="footer-brand-title">Jay Parmar</h3>
-          <p class="footer-brand-desc">
-            AI/ML builder, quantitative finance analyst &amp; product leader at IIM Bangalore — turning complex data into decisions that move.
-          </p>
-          <div class="footer-social-row">
-            <a href="https://www.linkedin.com/in/jay-parmar-ai" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
-            </a>
-            <a href="https://github.com/jay2532006" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.54-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.53.11-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.19.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-            </a>
-            <a href="mailto:jaydeepak2532006@gmail.com" class="social-icon-btn" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Portfolio Sections</h4>
-          <ul class="footer-links-list">
-            <li class="footer-link-item"><a href="#dossier-overview">Executive Overview</a></li>
-            <li class="footer-link-item"><a href="#dossier-education">IIM Bangalore Academics</a></li>
-            <li class="footer-link-item"><a href="#dossier-experience">Professional Experience (4)</a></li>
-            <li class="footer-link-item"><a href="#dossier-builds">Shipped Systems &amp; Case Studies (6)</a></li>
-            <li class="footer-link-item"><a href="#dossier-honors">National Honors &amp; Rankings</a></li>
-            <li class="footer-link-item"><a href="#dossier-credentials">Verified Certificates</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Assignment Progress</h4>
-          <ul class="footer-links-list">
-            <li class="footer-link-item"><a href="unoptimized.html" style="color: var(--accent-gold);">Step 1: Raw HTML Version ➔</a></li>
-            <li class="footer-link-item"><a href="comparison.html" style="color: var(--accent-gold-light);">Progress Proof &amp; Concept Breakdown ➔</a></li>
-            <li class="footer-link-item"><a href="articles.html">Field Essays (13 Articles)</a></li>
-            <li class="footer-link-item"><a href="assets/portfolio/resume/Jay-Parmar-Resume.pdf" target="_blank">Download Resume PDF</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom-bar">
-        <div>
-          © 2026 Jay Parmar. All rights reserved.
-        </div>
-        <div>
-          Course Submission: CSS Layout &amp; Styling Module · Due Date: 17 Nov 2026
-        </div>
-      </div>
-
     </div>
-  </footer>
+  </div>
 
-  <!-- =========================================================================
-       FLOATING QUICK SWITCHER (FIXED POSITIONING DEMONSTRATION)
-  ========================================================================= -->
-  <aside class="floating-progress-widget" aria-label="Quick Version Navigation">
-    <a href="unoptimized.html" title="Jump to Step 1 unstyled HTML version">
-      <span>Step 1 (Raw HTML)</span>
-      <span>⇄</span>
-    </a>
-    <span style="opacity: 0.4;">|</span>
-    <a href="comparison.html" title="Jump to concept-by-concept proof">
-      <span>Concept Proof</span>
-      <span>★</span>
-    </a>
-    <span style="opacity: 0.4;">|</span>
-    <a href="#top" title="Back to top">
-      <span>↑ Top</span>
-    </a>
-  </aside>
+  <!-- 1-100% Telemetry Overlay -->
+  <div class="launch-overlay" id="launchOverlay">
+    <div class="launch-modal">
+      <div class="launch-header">
+        <span class="pulse-dot"></span>
+        <span>EXECUTING SYSTEM RUNTIME</span>
+      </div>
+      <div class="progress-number" id="progressNumber">0%</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+      <div class="launch-log" id="launchLog">Initializing institutional neural runtime...</div>
+    </div>
+  </div>
 
-  <!-- =========================================================================
-       MODULE 6 JAVASCRIPT ARCHITECTURE SCRIPT
-       External script cleanly separating behaviors and demonstrating Modules 6.1 - 6.8
-  ========================================================================= -->
-  <script src="script.js" defer></script>
+  <script>
+    const files = {
+      profile: {
+        name: "jay-parmar.ts",
+        metric: "₹47.5L",
+        desc: "Supply chain ROI optimization",
+        code: `<span class="line-num">01</span><span class="kwd">const</span> builder = {
+<span class="line-num">02</span>  <span class="prop">name</span>: <span class="str">"Jay Parmar"</span>,
+<span class="line-num">03</span>  <span class="prop">institution</span>: <span class="str">"IIM Bangalore (BBA DBE)"</span>,
+<span class="line-num">04</span>  <span class="prop">roles</span>: [<span class="str">"AI/ML Builder"</span>, <span class="str">"Quantitative Finance Analyst"</span>],
+<span class="line-num">05</span>  <span class="prop">mission</span>: <span class="str">"Turning complex data into decisions that move"</span>,
+<span class="line-num">06</span>  <span class="prop">trackRecord</span>: {
+<span class="line-num">07</span>    <span class="prop">dstNidhiGrant</span>: <span class="num">200000</span>, <span class="cmt">// ₹2L Government of India Grant</span>
+<span class="line-num">08</span>    <span class="prop">amlLatencyMs</span>: <span class="num">12</span>,     <span class="cmt">// Sub-12ms graph fraud detection</span>
+<span class="line-num">09</span>    <span class="prop">nationalWins</span>: <span class="num">3</span>       <span class="cmt">// IIT Bombay, TCS Foundation, SIH</span>
+<span class="line-num">10</span>  }
+<span class="line-num">11</span>};`
+      },
+      iimb: {
+        name: "iim-bangalore.md",
+        metric: "Top 20",
+        desc: "Ranked out of 70,000+ candidates",
+        code: `<span class="line-num">01</span><span class="kwd">#</span> Academic Rigor & Institution
+<span class="line-num">02</span>
+<span class="line-num">03</span><span class="str">- Institution:</span> Indian Institute of Management Bangalore
+<span class="line-num">04</span><span class="str">- Program:</span> BBA in Digital Business & Entrepreneurship (2026-2029)
+<span class="line-num">05</span><span class="str">- Selectivity:</span> Top 20 selected nationally from 70,000+ applicants
+<span class="line-num">06</span><span class="str">- Research:</span> IIT Guwahati AI Intern (Disaster Analytics)`
+      },
+      aml: {
+        name: "nextgen-aml.py",
+        metric: "<12ms",
+        desc: "Graph AML screening latency",
+        code: `<span class="line-num">01</span><span class="kwd">import</span> xgboost <span class="kwd">as</span> xgb
+<span class="line-num">02</span><span class="kwd">from</span> torch_geometric.nn <span class="kwd">import</span> GNN
+<span class="line-num">03</span>
+<span class="line-num">04</span><span class="kwd">class</span> <span class="fn">AMLScreeningEngine</span>:
+<span class="line-num">05</span>    <span class="str">"""TCS Foundation National Winner · Sub-12ms AML Triaging"""</span>
+<span class="line-num">06</span>    <span class="kwd">def</span> <span class="fn">detect_mules</span>(self, transaction_subgraph):
+<span class="line-num">07</span>        features = self.gnn_embed(transaction_subgraph)
+<span class="line-num">08</span>        fraud_prob = self.xgb_model.predict_proba(features)
+<span class="line-num">09</span>        <span class="kwd">return</span> fraud_prob > <span class="num">0.82</span>`
+      },
+      edtech: {
+        name: "shikshashakti.ai",
+        metric: "233 Chs",
+        desc: "Curriculum chapters mapped with Claude API",
+        code: `<span class="line-num">01</span><span class="cmt">// ShikshaShakti.AI · Offline-first Diagnostic Engine</span>
+<span class="line-num">02</span><span class="kwd">export const</span> DiagnosticEngine = {
+<span class="line-num">03</span>  grant: <span class="str">"₹2L DST-NIDHI Ignition Award"</span>,
+<span class="line-num">04</span>  readinessLevel: <span class="str">"TRL 4 Prototype"</span>,
+<span class="line-num">05</span>  prerequisiteGraph: <span class="num">157</span>, <span class="cmt">// Directed acyclic skill graph</span>
+<span class="line-num">06</span>  chapters: <span class="num">233</span>
+<span class="line-num">07</span>};`
+      },
+      fdr: {
+        name: "fdr-setu.ts",
+        metric: "55 APIs",
+        desc: "26-table regulatory audit data model",
+        code: `<span class="line-num">01</span><span class="cmt">// FDR-Setu Institutional Escrow Infrastructure</span>
+<span class="line-num">02</span><span class="kwd">interface</span> <span class="fn">EscrowSettlement</span> {
+<span class="line-num">03</span>  endpoints: <span class="num">55</span>;
+<span class="line-num">04</span>  tables: <span class="num">26</span>;
+<span class="line-num">05</span>  securityPhase: <span class="str">"Two-Phase Cryptographic Commit"</span>;
+<span class="line-num">06</span>  compliance: <span class="str">"SIH 2026 AICTE Architecture"</span>;
+<span class="line-num">07</span>}`
+      }
+    };
 
+    function switchFile(key) {
+      const data = files[key];
+      if (!data) return;
+      document.getElementById('activeFileName').innerText = data.name;
+      document.getElementById('tabLabel').innerText = data.name;
+      document.getElementById('codeContent').innerHTML = data.code;
+      document.getElementById('panelMetric').innerText = data.metric;
+      document.getElementById('panelDesc').innerText = data.desc;
+
+      document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+
+    // 3D Perspective Tilt on Mouse Move
+    const frame = document.getElementById('studioFrame');
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX - innerWidth / 2) / (innerWidth / 2);
+      const y = (e.clientY - innerHeight / 2) / (innerHeight / 2);
+      frame.style.transform = `rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    });
+
+    // Cinematic 1-100% Execute/Enter Sequence
+    let isExecuting = false;
+    function executeSystem() {
+      if (isExecuting) return;
+      isExecuting = true;
+
+      const overlay = document.getElementById('launchOverlay');
+      const num = document.getElementById('progressNumber');
+      const bar = document.getElementById('progressBarFill');
+      const log = document.getElementById('launchLog');
+
+      overlay.classList.add('active');
+
+      const logs = [
+        { pct: 15, msg: "[01/05] Mounting IIM Bangalore DBE schema..." },
+        { pct: 38, msg: "[02/05] Benchmarking NextGenAML GNN weights (<12ms)..." },
+        { pct: 64, msg: "[03/05] Ingesting ₹2L DST-NIDHI prototype assets..." },
+        { pct: 86, msg: "[04/05] Optimizing Godrej Interio logistics models..." },
+        { pct: 100, msg: "[05/05] Verification complete. Launching executive dossier..." }
+      ];
+
+      let current = 0;
+      const interval = setInterval(() => {
+        current += 2;
+        if (current > 100) current = 100;
+
+        num.innerText = current + "%";
+        bar.style.width = current + "%";
+
+        for (let i = logs.length - 1; i >= 0; i--) {
+          if (current >= logs[i].pct) {
+            log.innerText = logs[i].msg;
+            break;
+          }
+        }
+
+        if (current >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            window.location.href = "dossier.html";
+          }, 350);
+        }
+      }, 25);
+    }
+
+    // Trigger on Enter key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        executeSystem();
+      }
+    });
+  </script>
 </body>
 </html>
