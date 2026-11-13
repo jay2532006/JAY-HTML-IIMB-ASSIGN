@@ -10,15 +10,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "400",
   display: "swap",
-  preload: false,
 });
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
