@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import FrameToFullscreen from "@/components/animations/FrameToFullscreen";
 import ScrollFloat from "@/components/animations/ScrollFloat";
