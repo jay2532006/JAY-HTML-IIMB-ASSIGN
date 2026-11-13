@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Module 6.6: Object dictionary for theme metadata
   const THEME_CONFIG = {
-    themes: ['obsidian', 'midnight', 'contrast'],
+    themes: ['dark', 'light'],
     labels: {
-      obsidian: 'Obsidian Noir',
-      midnight: 'Midnight Navy',
-      contrast: 'High-Contrast'
+      dark: '🌙 Dark',
+      light: '☀️ Light',
+      obsidian: '🌙 Dark'
     },
     storageKey: 'jay-portfolio-theme'
   };
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Initialize theme from localStorage or fallback to default
-  const savedTheme = localStorage.getItem(THEME_CONFIG.storageKey) || 'obsidian';
+  let savedTheme = localStorage.getItem(THEME_CONFIG.storageKey) || 'dark'; if (savedTheme === 'obsidian' || savedTheme === 'contrast') savedTheme = 'dark';
   // Module 6.5: Array.indexOf() method
   const foundIndex = THEME_CONFIG.themes.indexOf(savedTheme);
   currentThemeIndex = foundIndex !== -1 ? foundIndex : 0;

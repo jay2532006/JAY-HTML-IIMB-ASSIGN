@@ -1905,6 +1905,98 @@ button, input, select, textarea {
 /* --------------------------------------------------------------------------
    USP 8: THEME SWITCHER MODES (OBSIDIAN GOLD vs MIDNIGHT VELVET)
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   LIGHT MODE: EDITORIAL SANDSTONE & WARM IVORY (NON-BREAKING ADDITIVE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"], [data-theme="obsidian"] {
+  /* Inherits dark obsidian design tokens */
+}
+
+[data-theme="light"] {
+  --bg-black: #f6f3ee;
+  --bg-primary: #fcfbf9;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f0e6;
+  --bg-elevated: #ede7da;
+  --bg-glass: rgba(252, 251, 249, 0.92);
+
+  --text-white: #0c0b0a;
+  --text-primary: #1c1a17;
+  --text-secondary: #4a443c;
+  --text-muted: #736b61;
+  --text-dim: #999083;
+
+  --accent-gold: #9e733e;
+  --accent-gold-light: #b88a52;
+  --accent-gold-dark: #7a5426;
+  --accent-gold-glow: rgba(158, 115, 62, 0.16);
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-card: rgba(0, 0, 0, 0.11);
+  --border-highlight: rgba(158, 115, 62, 0.38);
+  --border-strong: rgba(158, 115, 62, 0.65);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 24px -4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 44px -8px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg-black);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-title-gradient {
+  background: linear-gradient(135deg, #0c0b0a 20%, #9e733e 50%, #0c0b0a 80%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+[data-theme="light"] .ambient-glow-1 {
+  background: radial-gradient(ellipse at center, rgba(158, 115, 62, 0.12), transparent 70%);
+}
+
+[data-theme="light"] .hero-portrait-card,
+[data-theme="light"] .contact-card-box,
+[data-theme="light"] .contact-form-panel,
+[data-theme="light"] .floating-progress-widget {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .brand-link-lockup {
+  background: #08080a;
+  padding: 4px 10px;
+  border-radius: 8px;
+  display: inline-flex;
+}
+
+[data-theme="light"] .project-filter-btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .project-filter-btn.active {
+  background: linear-gradient(135deg, #9e733e 0%, #b88a52 100%) !important;
+  border-color: #9e733e !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .btn-secondary {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: #f5f0e6;
+  border-color: var(--accent-gold);
+}
+
+
 [data-theme="midnight"] {
   --bg-black: #050811;
   --bg-primary: #0a0f20;
