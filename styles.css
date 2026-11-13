@@ -933,7 +933,7 @@ button, input, select, textarea {
   line-height: 1.55;
 }
 .experience-bullet::before {
-  content: 'â€¢';
+  content: 'Ã¢â‚¬Â¢';
   color: var(--accent-gold);
   font-size: 1.25rem;
   line-height: 1;
@@ -2046,4 +2046,24 @@ button, input, select, textarea {
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* Custom Brand Header Lockup */
+.brand-link-lockup {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.brand-lockup-img {
+  height: 42px;
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+.brand-link-lockup:hover .brand-lockup-img {
+  transform: scale(1.025);
+  filter: brightness(1.1);
 }
