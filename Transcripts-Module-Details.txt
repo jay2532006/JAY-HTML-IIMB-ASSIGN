@@ -1,0 +1,1192 @@
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+Introduction to Website Development
+Hi everyone, welcome to the very first module of this journey. Before we dive into technical
+details and start building amazing things, it's essential to understand the foundations. Think of
+this module as the groundwork, the theory that will help you appreciate and navigate the
+complexities of web development with confidence.
+In this module, we will explore some fascinating topics. That form the backbone of how
+internet works and how websites come to life. We will see how internet connects devices and
+delivers content instantly across the world. We will understand the role of browsers like
+Chrome and Safari in accessing this internet or what we call as web.
+We will understand the core technologies behind every website that are responsible for
+structure, style and interactivity. We will look at how browsers and servers communicate to
+load websites. We will also talk a little on the two sides of development, user facing side and
+the backend server side. And finally, we will understand how internet has transformed society,
+business, as well as everyday life.
+This module lays the theoretical foundation for everything we will build later. By
+understanding these concepts, you will gain a strong base for practical skills. And comprehend
+the fundamentals and appreciate what web exactly is. So let's get started with this exciting
+journey. This module will set you on the right path.
+Welcome to the world of web development. 
+
+
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+Tips to Web Development
+Hi everyone. Here are some tips to help you get the most out of this course. First, remember,
+we will start with the basics. We will take you through every single concept step by step. Even
+if you feel like you know it, watch closely. A small missed detail can cause you headaches
+later. So stay with it even the simple parts.
+Next is probably the most important tip. Unlike other courses where you might be used to
+taking notes while watching, I do not recommend doing the same thing here. Do not write code
+while you are watching this video. Instead focus on watching and understanding the element
+that is being taught.
+Then pause the video and try writing the code on your own. If you get stuck, search your books
+or search online. This habit will build a real skill in you. Solving problems on your own. It is
+okay to get stuck. It is normal to not get things working perfectly the first time. And it is
+absolutely okay to feel frustrated.
+All of us do. When that happens, take a break. Clear your mind and come back with a fresh
+perspective. You will be surprised at how often this helps you see the solution differently and
+arrive at the right way to solve the problem. Remember, resources are your friends. Search
+online, read the book provided, ask questions on our forums, do not give up. The best
+developers, the best website developers are the ones who stick with a problem, slowly solving
+parts one by one until they build a solution. Do not try to memorize everything. Coding is not
+about memorizing every line or command. It is about understanding how different elements
+work together. And building the confidence that you can figure it out.
+That's what real programmers do. They rely on understanding and not on memorizing. Finally,
+let me repeat the most important tip once again. When learning, do not copy code from the
+video. Pause, try it on your own, troubleshoot any issues by yourself, and then check the
+solution. This approach will help you truly understand what you are doing. With these tips, I
+am confident that you will not only learn to build websites, but build a mindset for tackling real
+world problems. Let's dive in and get started.
+
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+Tips to Web Development
+Hi everyone. Here are some tips to help you get the most out of this course. First, remember,
+we will start with the basics. We will take you through every single concept step by step. Even
+if you feel like you know it, watch closely. A small missed detail can cause you headaches
+later. So stay with it even the simple parts.
+Next is probably the most important tip. Unlike other courses where you might be used to
+taking notes while watching, I do not recommend doing the same thing here. Do not write code
+while you are watching this video. Instead focus on watching and understanding the element
+that is being taught.
+Then pause the video and try writing the code on your own. If you get stuck, search your books
+or search online. This habit will build a real skill in you. Solving problems on your own. It is
+okay to get stuck. It is normal to not get things working perfectly the first time. And it is
+absolutely okay to feel frustrated.
+All of us do. When that happens, take a break. Clear your mind and come back with a fresh
+perspective. You will be surprised at how often this helps you see the solution differently and
+arrive at the right way to solve the problem. Remember, resources are your friends. Search
+online, read the book provided, ask questions on our forums, do not give up. The best
+developers, the best website developers are the ones who stick with a problem, slowly solving
+parts one by one until they build a solution. Do not try to memorize everything. Coding is not
+about memorizing every line or command. It is about understanding how different elements
+work together. And building the confidence that you can figure it out.
+That's what real programmers do. They rely on understanding and not on memorizing. Finally,
+let me repeat the most important tip once again. When learning, do not copy code from the
+video. Pause, try it on your own, troubleshoot any issues by yourself, and then check the
+solution. This approach will help you truly understand what you are doing. With these tips, I
+am confident that you will not only learn to build websites, but build a mindset for tackling real
+world problems. Let's dive in and get started.
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+
+HTML, CSS AND JAVASCRIPT
+Let's look at what html files do, html files for the structure and content of web pages. First we
+have html files, which stand for hypertext markup language. HTML is the foundation of any
+web page that provides the basic content and the structure. Think of HTML as the skeleton of
+the webpage. It has the content to be displayed, but in a very rudimentary form, and it structures
+it into headings, paragraphs, lists, sections, giving the browser an outline of how the page is
+structured.
+If you visit a blog, the HTML file holds the main text of the article, but along with elements
+like titles. Images, and so on. But on its own, HTML is very plain. It is just text and structure.
+Not a lot of colors or styling. That's where CSS files come in. CSS files for style and design.
+CSS, or Cascading Style Sheets, are responsible for the design and styling of elements defined
+in the HTML file.
+CSS allows us to add color. Adjust fonts, position elements, and much more. For example, let
+us say that you have a simple text block in HTML with CSS. We can target that specific text
+block and add color. We can make it bold. We can give it a background, adjust the spacing,
+and even animate it. CSS transforms a basic HTML page into something visually appealing,
+and it has the ability to control everything.
+From as small as font sizes to the entire page layout. JavaScript files bring life to the website
+by adding interactivity and logic. JavaScript is a programming language that allows for
+behavior on the website. While HTML provides structure and CSS handles style, JavaScript is
+used for dynamic features.
+For example, it can be used to make a button perform an action when it is clicked, like
+displaying a pop up message. JavaScript can also perform calculations. Think of an online
+shopping cart that updates its total price when you add items. In a nutshell, JavaScript allows
+for logic, that is, When this, do that.
+This is what JavaScript brings to our web page. Okay. Going back to browsers, when you load
+a website, the browser receives the HTML. CSS and JavaScript files from the server. It then
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+HTTP Request
+Hi, everyone. In our last few videos, we spoke about how computer requests files from a server
+to load a webpage and how the server responds with the files, namely HTML, CSS, JavaScript,
+which are then rendered by your browsers to show you information. In this video, we will go
+deeper into this request response cycle, understand the role of HTTP requests, and then also
+learn what is front end and back end.
+Remembering our last video, when you type flipkart. com in your browser, your browser
+requests files from Flipkart's server. The server processes this request and responds with
+HTML, CSS, JavaScript, and other resources that make up the Flipkart website. The browser
+then takes these files, interprets them, and displays the web page in front of you.
+But while there are so many websites and servers, how do we make them talk and understand
+the same language or in the same grammar? How do they send information in correct format
+that can be understood by any browser? How can servers send files that can be understood by
+any browser? How can browsers ask for files that are understood by any server?
+This is where HTTP comes in between. And HTTP request is one type of request that your
+browser sends to the server. HTTP stands for Hypertext Transfer Protocol. It is a set of
+instructions or protocol or grammar that defines how data is sent and received over the internet.
+HTTP allows browsers and servers to communicate effectively, no matter which device or
+which network they're on.
+But HTTP is just one type of protocol. There are other types of protocols, such as HTTPS,
+which is a secure version of HTTP. FTP which is the file transfer protocol SMTP or the simple
+mail transfer protocol. Each protocol serves a specific purpose and defines the grammar or the
+instruction to be used while communicating between different devices. 
+ 
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+Frontend and Backend
+Frontend and backend. What do they mean? Now that we know about request response cycle
+and HTTP, let's talk about frontend and backend, the two main sides of a web application. What
+is frontend? The frontend is everything that you see and interact with in your browser. It
+includes layouts, colors, fonts, images, buttons, and more.
+Front end development uses languages such as HTML, CSS, and JavaScript to create and style
+this element. Think of the front end as a user interface. It is designed to look appealing and
+provide a smooth experience. When you click on a button, scroll through a page or watch a
+video, you are interacting with the front end.
+What is the backend then? Backend is everything that is happening behind the scenes. It's where
+data is stored, processed, managed, and retrieved. Backend is responsible for tasks like
+retrieving data from databases, handling user logins, and processing transactions. Backend
+development typically uses languages such as Python, Java, Ruby, or even frameworks based
+on JavaScript like Node js. The backend powers the features that the frontend presents to the
+users. Why is backend primarily needed for heavy applications? Not all websites need a
+backend. Backend functionality is generally required for heavy applications that rely on
+complex interactions and data processing. Like social media platforms, e commerce stores, or
+even streaming services like Netflix.
+For example, a simple website like IIMB DBE website can be built with just the front end to
+display text, images and information. However, if you want advanced features like user login,
+course tracking, or if you want to present personalized data as in the IIMBx e-learning platform,
+then you need a backend.
+The backend would handle data storage of all these files and elements, authentication of users,
+user management to support these functionalities. And much more for many businesses front
+end alone is enough to provide an attractive and informative website for customers. What is
+the focus of this course?
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+This course will focus on web publishing, which primarily involves website front end
+development without interacting with the backend. We will cover how to build style and create
+interactive websites that users can interact without diving into backend programming. This is
+ideal for creating websites for blogs, portfolios, small businesses, or other static content where
+backend support is not required.
+While we won't cover backend development in this course, you will of course learn JavaScript,
+which will give you a strong foundation for exploring backend development in further courses.
+After mastering JavaScript here, you will be well equipped to pick up backend skills as well.
+If you are interested in creating more complex applications, wrapping up, so to recap, the
+request response cycle allows communication between your browser and the server with HTTP
+request being one way to transmit and receive data.
+The front end is everything that users see back end handles complex data processing. This
+course will focus on front end web publishing, giving you the skills to create beautiful
+functional websites. Thank you. 
+
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+Evolution of Internet and its Impact on Businesses and Daily Life
+Hi, today we are going to discuss the evolution of internet and its impact on businesses and
+daily life over the years. We will see how digital innovation has transformed the world since
+the 1990s, both globally and here in India. The beginning of digital age. The internet as we
+know it began in the early 1990s, thanks largely to Tim Berners Lee.
+Before this, networks existed, but they were mostly limited to research institutes and
+government use. Tim invented HTTP and HTML, the core technologies that we introduced in
+the previous videos. These were foundational technologies that enabled people to access and
+share information online. His work laid the infrastructure for internet and created the World
+Wide Web as we know it today.
+In the early 1990s, websites were basic and text based with limited interactivity. Popular early
+browsers like Netscape Navigator and Internet Explorer helped people explore the web, but it
+was mostly static content. Businesses saw the potential and rushed to establish an online
+presence. This led to the dot com boom and everyone scrambled to block domain names and
+build businesses. Some examples are peck.com and boo.com. There was extreme excitement
+about internet's potential. Venture capitalists poured money into any such venture. Assuming
+that all of these would become global giants.
+The dot com boom and bust. As internet gained popularity, the late 1990s saw rapid growth in
+internet bound businesses. The dot com boom was born, as companies saw internet as a new,
+exciting market. Many rushed to launch websites, assuming that any dot com would make
+money. But around the beginning of 2000, The dot com bubble burst, leading to a huge market
+crash. Companies built on hype and lacking substance quickly disappeared.
+However, companies with real use cases and purposes thrived. Businesses like Amazon and
+Google flourished because they offered real value. The sites that survived and eventually
+prospered after the bubble burst had two common things. A sound business plan and a niche in
+a marketplace that either was unique or particularly well defined and well served.
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+The burst of the bubble marked a shift towards more sustainable digital growth. In India,
+companies like Rediff and Naukri were part of this early wave. Rediff provided email and news
+while Naukri transformed the job search process. The rise of digital business in the 2000s. After
+the dot com crash, digital businesses matured and became user focused.
+Major global platforms like Google, Facebook, and YouTube emerged. And they redefined
+how people connect, search, and share information. In India, companies like MakeMyTrip,
+which was founded in 2000, transformed the travel industry. Shadi. com brought marriage
+matchmaking to the digital era, reshaping culturally significant process for millions in India.
+While e commerce grew steadily with Amazon becoming a global retailer, India saw the rise
+of Flipkart in 2007. Starting as an online bookstore, Flipkart expanded to sell a wide range of
+products.
+The impact of mobile and social media era. The decade of 2010 marked a new shift, the rise of
+mobile devices and social media. The launch of iPhone in 2007 changed everything.
+Smartphones made it possible to access the internet anytime, anywhere with mobile apps,
+businesses could reach users on the go. Users did not have to be on a computer to use the
+internet anymore. In India, mobile and internet growth, which was growing significantly until
+2015, skyrocketed with Reliance Jio in 2016.
+Jio's affordable data plans brought fast internet to millions, transforming digital access across
+the country. Suddenly, more people than ever had internet access, which fueled online
+businesses, education, and e commerce. During the 2010s, WhatsApp became India's primary
+messaging app and Paytm was among the first in digital payments.
+Social media platforms like Facebook, Instagram, Twitter connected people in real time and
+around the world. They influence trends, culture, and even politics. Businesses use these
+platforms to engage with customers directly. Creating brand royalty and real time connections
+that were not possible before.
+UPI revolution and India's digital payment boom. While we talk about the internet and its
+impact, we cannot ignore UPI. One of India's most transformative digital developments has
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+© All Rights Reserved. This document has been authored by Course Instructor – Govind Shenoy and is permitted for use only within the course
+"Website Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations,
+pictures, scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical,
+photocopying, recording or otherwise – without the prior permission of the author.
+been the launch of UPI or Unified Payment Interface. Launched in 2016, UPI made cashless
+transactions quick and easy. Apps like PhonePe, GooglePay, and Paytm adopted UPI, making
+transactions seamless.
+Today, UPI processes billions of transactions every month, making India one of the world's
+leaders in digital payments. The era of cloud computing, big data, and Indian digital ecosystem.
+As digital businesses grew, so did the need for handling vast amount of data. Physically
+handling servers was always cumbersome.
+This led to the rise of cloud computing. Companies like AWS, Microsoft Azure, and Google
+Cloud enabled businesses to scale without having physical servers. In India, the rise of cloud
+ services supported startups. Startups like Swiggy and Zomato, which delivered food in real
+time, or Ola, which allowed you to book cabs whenever you want, no longer had to invest a lot
+of money in infrastructure and servers.
+These companies powered by cloud and data analytics transformed how people accessed local
+services. With more people online, big data became essential for understanding consumers.
+Data collected over decades has truly become a key resource. Today, with the internet active
+for more than 30 years, it has sufficient data to train modern AI systems.
+Information from searches, social media purchases, and other transactions have given AI
+systems the experience they need to deliver personalized services and insights. The modern
+digital world and impact on businesses. Today, internet impacts nearly every industry from
+retail and entertainment to education and finance.
+Traditional businesses have moved online while digital first companies like Swiggy, Hotstar,
+Zerodha and many more have created entirely new markets. Swiggy changed food delivery.
+Hotstar made entertainment accessible to anyone, anywhere. While apps like phone pay and
+Google pay simplified digital payments. Digital marketing, e commerce, and cloud services
+became essential for all businesses.
+
+ Website Development
+ Course Instructor –
+ Govind Shenoy
+ Module 1
+
+Even small businesses now need an online presence to reach their customers and entrepreneurs
+are building digital first brands to meet India's growing demand. The internet's lasting impact.
+Since the 1990s, Internet has evolved from a basic network to a global platform that impacts
+every part of our lives. It has changed how we communicate, learn, shop, work, and do business
+both globally and in India.
+Thank you. See you in the next module.   
+
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Product Management Principles
+Hi, welcome back today we are diving into how product management principles can transform
+the way we approach web development. Before anything else, let's ask ourselves two
+fundamental questions. Why is a website needed and what do we want to achieve with it? These
+first principles questions help us understand the core purpose of a website.
+A successful website isn't just about aesthetics. It's about meeting business objectives while
+delivering a stellar user experience. By approaching design and development fundamentally,
+that is understanding both business goals and user needs, you can create websites that are not
+only functional, but also impactful.
+Let's explore how structuring, prioritizing, and balancing goals can help us achieve this. First,
+we must structure website based on business objectives. Every website should have a clear
+purpose, whether it is to drive sales, to generate leads, or increase brand awareness. Structuring
+your website around these objectives ensures every element serves a purpose. For example, if
+you are in Flipkart, the business objective is to drive e-commerce sales. Therefore, you should
+structure the homepage such that it highlights sales and offers. Product categories must be
+prominently displayed for easy navigation. Put user ratings and reviews to build trust and
+encourage purchases.
+Everything is towards the business objective of driving e-commerce sales. So to apply this, you
+need to define the primary goals, ask yourself, is it to sell? is it to inform or is it to engage?
+Then you design the user journeys, map out how a user will navigate to reach the goal. In case
+of Flipkart, I can land on the page.
+I could land through ads on a specific product. After that, so if I land on the main page, I need
+to go through the categories or through the search. Then I need to go through the subcategories
+pages, look at various product pages, then click on add now, then go to the cart, then add a
+payment method, add a address, and then complete the purchase.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+So, you design the user journey with as little friction as possible. Highlight key features at
+every moment before every step, you want them to do the next step. So, use banners, CTAs or
+pop ups to direct attention to your objectives. Now you might feel that you need a lot of
+features, but not all features are created equally.
+Prioritize those that directly contribute to your business objectives. Buy now and add to cart
+buttons are mandatory but probably share on WhatsApp or share on social media might not be
+that required for Flipkart. Personalize product recommendations it's great to boost cross selling
+lightning deal section can create urgency.
+So, prioritize features that are needed. How can you prioritize? Analyze user behaviors. You
+can use tools like Google analytics to see what users interact with what the most. Focus on
+ROI. Features like lead forms or e-commerce integrations should take precedence if they
+directly impact revenue. And you always need to test and iterate.
+Put something out, test it, determine if it's effective. If it is, keep. Otherwise, change it, do AB
+testing, and then keep improving. A great website strikes a balance between what the business
+wants as well as what the user wants. Ignoring either can lead to poor engagement or unmet
+business objectives.
+Example, if it's Zomato, Zomato wants to encourage you to order food, but does the user want
+that? User wants to quickly find restaurants and view menus and get food fast. So, you need to
+balance both. Have a clear search functionality for users, have a clear quiz in filter, delivery
+time, indication, and ratings for users.
+At the same time, give CTAs, nudges, visual deals, things to attract users to complete the
+purchase to meet your business goal. Some tips, always prioritize clarity and ease of use.
+Always gather user feedback to identify pain points. Align all your decisions with both business
+and user perspectives. Think from the user's perspective.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+
+
+To create an intuitive website, you need to understand what the user is looking for. Put yourself
+in the user's shoe, conduct user surveys or gather insights, talk to them, build their persona,
+think of who they are, what are their needs, how are their families structured, how much time
+they have, and so on.
+And then build their persona and then build the website for that persona. And always
+continuously test the website with real users. To summarize, apply product management
+principles to build better websites. Structure your website around clear business objectives.
+Prioritize features that align with your goals.
+Balance business needs with user expectations. Think like your users to design intuitive
+experiences. Align your design with both goals and expectations to achieve success. By
+following these steps, you will not only create a beautiful website, but one that also drives
+meaningful results for your business.
+Thank you. And let's start building smarter business as well as user-oriented websites. Thank
+you. See you in the next video. 
+
+
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Color Theory
+Hi, have you ever looked at a website and thought, wow, that looks amazing. The colors just
+seem to pop. They fit perfectly and they make you just want to stay on that website, but then
+you also stumble upon another website, maybe some public sector website and immediately
+feel like closing it. The colors are all over the place.
+And they're just so irritating to look at. Why does that happen? One of the key reasons this
+happens is because of color theory and the psychology of colors. Color psychology deepens
+the concept of color theory, revealing how colors influence our emotions, behaviors, and even
+our decision-making processes.
+Did you know that seeing warm colors like red or orange can increase your heart rate, while
+cool colors like blue and green can reduce it and help build trust.
+That's how powerful color is. They shape our experiences, not just online, but in life. Let's dive
+deeper to understand why some websites look stunning and engaging while others feel visually
+chaotic. What is color theory? Color theory is a science and art of using colors. It explains how
+colors mix, match and contrast.
+And most importantly, how they affect our emotions and perceptions. Colors arrange us visual,
+they're psychological. The way you feel when you see a website is influenced by the colors it
+uses. That is why getting your color palette right is so crucial for web development. According
+to color psychology, our response to color is both biological and cultural.
+For instance, red color universally conveys urgency and excitement, but it can also signify
+danger. That is why it's used for stop signs and sales promotions. Similarly, blue is associated
+with calmness and trust across many cultures. That is why it is dominant in banking and
+healthcare branding. In web design, the intensity and contrast of colors also affect user
+engagement.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+There was a study that showed that high contrast designs grab attention while subtle tone
+promotes relaxation. Maybe this is why streaming platforms like Netflix use high contrast red
+and black. Because they want to grab your attention while wellness websites tend to lean
+towards softer green and white colors.
+So, let's break down colors one by one and see what emotions they evoke along with examples
+of brands that use them effectively. If you look at Wikipedia as well, you can see that colors
+has an inherent perception associated with it. Colors have qualities that cause certain emotions,
+right. And that is why it is used in marketing and branding.
+In fact, you can see that there, there are many examples where brands used colors to change
+their perceptions. You will find many examples here. Yes. Store colors for friends. Grabbing
+attention by using signs. There's, yes. How different people, different genders, people of
+different age prefer different colors.
+So, there's a lot of information here. In fact, something that's very surprising is that among
+equally placed athletes. One very interesting observation is that among Olympic athletes with
+almost equal ability, those who were red were more likely to win than those who were blue.
+Those wearing red won 60 percent of the matches.
+So, colors influences a lot. So, let's look at colors in depth. Each color has a psychology
+associated with it. You can also look at color psychology. org. And it says that, hey, for red, it
+is associated with energy, war, danger, strength. Green is associated with nature, growth,
+harmony, freshness, fertility. Blue with unique, authentic, spiritual, idealistic.
+So, the association is there. Here you go. When you ask someone to visualize a tranquil scene,
+the high, there are high chances that people will immediately imagine a great deal of blue,
+maybe a ocean, right. That is tranquil. So that is what that color is associated with. Brown has
+its own color, orange, and so on, right.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Blue is often associated with trust, reliability, peace, loyalty, competence, which is why many
+financial and tech companies use it. If you see Razorpay uses bluish color, even the background
+has a bluish tinge. JustPay, blue, they need not have all kept it as blue. Insurance is also blue.
+PayPal, another payment provider is mostly blue.
+Research in color psychology also shows that blue color lighting in spaces can promote
+calmness and reduce stress, which is why it's used in apps as well and in websites designed for
+productivity or health tracking. Next, let's look at yellow. Yellow evokes creativity. It evokes
+the feeling of happiness.
+Also, yellow is attention grabbing and energetic. It's why brands like Mokobara, this is a very
+interesting brand that came up just selling bags. But one of their products went viral, which is
+this yellow Mokomini. Most of you would have seen it. And this is always out of stock. Here
+you see, I wouldn't say it's just because of their design and usability, but also the color yellow
+had a big role to play in this.
+People might not realize, but maybe this brand got attention because of the color that they
+chose. It is very hard to ignore. Yellow color just stands out and grabs your attention. Green is
+another color that's used extensively. If you look at this, most of grocery sites use green.
+Flipkart uses blue, but then they've changed the color for Flipkart grocery specifically to green.
+Green is psychologically linked to balance and rejuvenation. Studies show that just looking at
+green spaces helps lower cortisol levels, which translate into trust and relaxation also when
+used in web design. It is associated with freshness. Eco friendliness, health, and which is why
+you see it in a lot of such food as well as in grocery websites, where you want to indicate
+freshness.
+ID, which can go stale very fast, uses greenish color brandings. Also medicinal websites,
+pharmacy, they want you to know that it is fresh, it's linked to health, which is why they use
+green as well. Brown, the color stands for dependability, ruggedness, trustworthy, and also
+simplicity. Although their logo is green, most of their products are brown or have a tinge of
+brown.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+They did not do it, but why do they? If you look at this, all their newer shoes, everything has a
+little tinge of brown. That is because it signifies ruggedness and being one with nature. That is
+what brown signifies. White is something that is used by Apple a lot and a lot of other
+companies who want to signify clarity.
+White represents cleanliness, clean, simplicity, innocence, honesty. Apple is actually a master
+of white, their minimalistic design paired with silver and black screams of sophistication and
+cleanliness, perfection. Black alternatively radiates formality, dramatic significance,
+sophistication, and security.
+Black is actually timeless and classic. It exudes luxury and professionalism. We see on nykaa
+that they use a lot of pink and purple. Purple and pink is associated with compassion,
+sophistication. Culturally, we associate pink with the feminine gender, which is why they use
+pink here. Darker shades of pink or purple are actually associated with Luxury.
+The colors that they select is targeted to this specific demographic and they signal what they
+want the brand to communicate. Applications of color theory in web development go far
+beyond aesthetics. For example, if we look at Puma today, there's a sale running. Just that
+portion is red in color. Red is often associated with urgency in call to actions like buy now or
+limited offer.
+Green similarly works well on checkout pages. They signify success. Blue and green are
+together used because they evoke trust and healing at times. White spaces are used to enhance
+clarity and reduce cognitive load. Some educational websites use yellow because yellow is
+known to boost engagement as well as creativity.
+So, how can we make use of all this? Professional web designers often rely on curated color
+palettes to avoid reinventing the wheel. One of my favorite resources is color hunt, where you
+can find modern trendy looking color schemes for any project. You can select any of these
+colors, copy the color code and use it in CSS whenever we get to that.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+So, they have ready-made palettes with different themes. Maybe you want to do a retro theme
+for maybe a vintage thing. You could use these colors. There is warm themes, cold themes.
+These are colder themes. You can have summer themes. These colors are associated with
+summer. Similarly, winter, happy, happy will probably have a lot of lighter yellows in it.
+There you go. These are happier themes. What about skin? You see, yeah, these are tones of
+skin. If you are selling something skin related, maybe this can be used. For kids, what do kids
+like? These are colors associated with kids. They probably like these tones. So, these are created
+by, there's a Christmas theme.
+Yeah, these are associated with Christmas. We intuitively get to know that as well. What about
+wedding? Hmm. Maybe for Western weddings. This is associated. Indian weddings probably
+has a lot of red in it, but anyway, pestle colors. Yeah. Also, did you know that you can pick
+your own colors using Adobe color?
+So, this is another website I use. You can pick themes. You can say that based on this, I want
+maybe a triadic color that shows three complimentary colors or three triadic colors within the
+color circle. We could look at complimentary colors like things that lie on the opposite end.
+So, these can, you can pick colors that look harmoniously good. While choosing colors,
+understand the cultural context.
+Red might mean celebration in some culture, but danger in another. Leverage contrast uses
+high contrasting colors for headlines or call to actions and softer colors for body text where
+you want to give that clarity test for accessibility, ensure that there's not so much contrast that
+things are not even readable or it's just too jarring.
+I often use. Coolers or colors, whatever it's called, COOLORS. Co, you can go to generator,
+and this has a nice way of seeing how things will look and it's free. Suppose you, let me do
+this, you can keep pressing space bar to change and suppose I like this color, I like this color,
+I can lock this and then against those, it gives me other colors, right.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Now maybe along with that, I like this, I'll lock this as well and then yes, this is also good.
+Hmm. This probably is good. And maybe I want a darker color. Now, the great part is that you
+can view how this will look.
+You can visualize these colors and it will give you samples of how this actually looks. Cancel.
+If we use these colors, we could do great looking websites like this, designs like this, logos in
+this way, charts in this way, it, and maybe use these icons. So, this is a great way to visualize
+how the colors that you've chosen work.
+If I wanted maybe a specific color with red, I'll probably choose those and see how they look
+together. In mobile, it probably looks in some other way and so on, right. Whatever you typed
+might look this way. To wrap up, color theory is an incredibly powerful tool in web
+development. It's not just about aesthetics, it's about psychology, branding, and user
+experience.
+From trust inspiring blues to energetic yellows, every color tells a story. Color psychology adds
+a scientific layer to this, ensuring that your color choices resonate on a deeper level with your
+audience. So next time you're working on a project, don't just pick colors that look good to you.
+Pick colors that feel right, feel right for the brand, feel right for the website you are developing.
+And trust me, your users will notice the difference too. Thank you and see you in the next
+video. 
+
+
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Typography
+Hi, welcome back. In this video, let's talk about typography. Now before you roll your eyes
+and think, oh, really fonts, can't I just pick Arial and just call it? Let me stop you right there.
+Typography isn't just about slapping some text on the screen or a page. It's about crafting an
+experience. And sending a message and creating a mood.
+Imagine this, you're planning a grand dinner for your anniversary, and you want to send out
+invites. Can you use a font like Comic Sans that is very funny, or that is more kiddish? Does
+that scream of romance for your anniversary? No, exactly. So that is the power of typography.
+It can make or break the message that you're trying to convey.
+Typography isn't a design tool, it's a language. And just like any language, it can be elegant,
+powerful, playful, bold, or just outright confusing. The way we present text can evoke trust,
+excitement, or even frustration. So, let's dive into the fascinating world of typography and see
+why it is so much more than just selecting of fonts.
+Did you know that reading is one of the most complex cognitive processes that we do daily?
+When we read, our eyes send signals to our brains, which decode symbols into letters, words,
+and ideas. But if the typography is off, that is, if there is poor spacing, if there are illegible fonts
+or low contrast, it creates roadblocks in this process of understanding.
+Legibility and readability are the two pillars of good typography. Legibility is all about how
+easy it is to distinguish one letter from another. Let's just look at these here. Fonts like Roboto,
+this font, clearly distinguishes between zero and O.
+And such fonts are great because their characters are clear and are well defined. Readability is
+all about how easily a reader can engage with the text as a whole. Line spacing, font size, and
+layout all play a huge role here. For instance, imagine you are reading a recipe in a tiny,
+squished font, such as this, which is the script font, you will be squinting.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+You will reread lines and probably you will get frustrated. That is because recipes require
+something that's way more legible. You're following instructions. But the script has poor
+readability and it's the typography's job to have prevented that. Fonts come in many shapes and
+sizes, but at their core, they belong to two main families, the Serif family and the Sans Serif
+family.
+Let us look at what that is in Google fonts. Yes, you'll see two families here with say serif and
+sans serif, right. Serif fonts have those little feet or strokes at the end of letters. Let us look at
+this.
+So, as you can see, these fonts have these little feet at the bottom. They're like the vintage wine
+of typography, classy, timeless, and a little formal. So, when do we use them? You should use
+them in print media, legal documents, or luxury brands. Common examples of serif fonts are
+Times New Roman or Georgia that you would have definitely used in your life.
+A fun fact about serif fonts is that they originated from ancient carvings in stone. While carving,
+sculptors could not create a sharp 90-degree angle. That is why these feats came as a natural
+part of the letters.  Then we have the sans serif fonts. Let us select that as well. Let's look at
+this. There you go.
+Sans literally means without. So, these are font styles without those frills, without those extra
+feet at the bottom. As you can see the H here, the right eye. Think of these as minimalist, no
+frills fonts. They are clean, modern, and are perfect for digital screens. So, you should use sans
+serif fonts like Helvetica, Arial, Open Sans for websites, apps, and everything that needs to feel
+fresh and approachable.
+Google fonts have popular sans serif fonts like Roboto and Lato, which are widely loved for
+their readability and versatility. You can do this, yeah, Roboto, this, or even Lato, which is
+really famous and really, really legible. Let's look at the psychology of fonts. Typography isn't
+just visual, just like colors.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+It is also psychological. Different fonts automatically convey different emotions and can even
+influence behaviors. For example, Serif font family represents stable, traditionalness,
+authoritative nature. So therefore, Serif fonts are perfect for academic journals or high-end
+brands. Sans Serif fonts convey cleanliness, a clean look, friendliness, a contemporary nature.
+They are ideal for tech startups or lifestyle blogs. There are also script fonts. Script fonts are
+elegant and decorative, but harder to read in long paragraphs. They are best for headings or
+invitations. Display fonts. Display fonts are bold, unique, and attention grabbing. Use them
+sparingly for impact.
+Let us look at them on Google Fonts. Let's just search for script fonts. Script fonts are cursive
+like this, as you can see. They're perfect for invitations, but not for reading a lot of text.
+Similarly, display fonts. Display fonts are bold. Let's pick a different display font. What about
+this? Yes. There you see.
+They are used to signify something that is the heading of a grabbing attention. Use them
+sparingly for impact, wherever, whichever are as part of the display family. For example, if
+you are designing a website for an eco-friendly brand. Pairing a serif for heading with open
+sans or sans serif for body text can create a perfect balance of authority and modernity.
+Let's go deeper into what makes typography so important for engagement. There's something
+called the word superiority effect. Our brains recognize entire words faster than individual
+letters. That is why lowercase letters are often easier to read. Their shapes are more distinct.
+So, this means that you must avoid all caps unless you want to shout at your audience.
+Good typography uses font size, weight, and spacing to [00:08:00] create a visual hierarchy.
+Think of a blog post. You can have a title which is large and bold. You could have a display
+font like we saw, Playfair Display, with say a 46-pixel size. For the subheadings, you could
+have a medium and a clean look, maybe a Roboto Bold font with 24 pixels.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Which is half the size of the title. For the actual body text, you could use a small and readable
+font, maybe Open Sans, and have a 16 PX or a 12 PX size. If you are stuck wondering which
+fonts to use, you can always use Google Fonts. It is free and offers a ton of fonts for every
+project. Plus, you can type something and exactly see how they look.
+You could adjust spacing sizes and see what works best for your design. Some of my top picks
+are Open Sans, or Roboto, or LoRa, specifically for the Sans Serif family. Also, Google Fonts
+is a great place to learn more about typography itself. You can look at the Knowledge section,
+and especially here in Readability and Accessibility, it gives a lot of information on how fonts
+influence readability.
+Legibility is explained here. How are I perceive things can also be seen. Also, so spacing is
+everything in typography. Space can be between lines, between words, and even between
+letters. Too much or too little spacing can make your text unreadable. Also don't forget to
+contrast as we have discussed in the colors video.
+Your text should stand out against the background. You can use various coloring tools to check
+the contrast and ensure that your text meets sufficient accessibility. Typography isn't just one
+size fits all. People read differently depending on the context and the device being used. There
+are different reading styles.
+Glanceable reading is for quick, immediate information. Think about headlines, notifications,
+or key statistics. On mobile devices, this often translates to large, bold text that grabs attention
+quickly. On desktops, it could be prominent banners or call to actions. There's also interlude
+reading. This is the middle ground where people spend some more time and scan such as
+navigation menus, summaries, or short snippets of text.
+On mobile you might have to ensure these are compact, clear labels through collapsible menus.
+On desktops, it could be in a form of a well-structured sidebar or quick summaries. There's also
+long form reading. This is for in depth articles or novels where comfort is priority, readability
+is key here. With proper line spacing, font size and layout, you can ensure that reading becomes
+much more easier.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+On mobile, a responsive layout ensures the text adjusts itself well to smaller screens. While on
+desktops, it often utilizes larger fonts and wider spacing. Therefore, based on the type of
+reading of that content, whether it is glanceable reading content, interlude reading content, or
+long form reading content, you must pick the ideal font.
+Therefore, to conclude, typography isn't just about picking a font. It's about creating an
+experience. From setting the tone of guiding the reader's eye, good typography can elevate your
+design from ordinary to extraordinary. When we start building our own websites in the next
+module, just don't choose a font because it looks right.
+Choose it because it feels right, aligns with your message and makes your content
+unforgettable. That's it in this video. See you in the next video and may your fonts always be
+fabulous. 
+
+
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+User Interface-UI
+Hi everyone. Today we will dive deep into an essential aspect of web design, UI design, or user
+interface design. This is what makes your website intuitive, engaging, and most importantly,
+user-friendly. We've already explored fundamentals like color theory and typography. Now
+let's see how these elements come together to create effective and visually appealing interfaces.
+Imagine you're reading a webpage. Your eyes naturally gravitate to the biggest, boldest and
+brightest elements first, why that is visual hierarchy at work. A principle that determines the
+order in which information is noticed and processed. Let us look at an example. Let, let us look
+at this PPT that we have here.
+You will naturally read this big, bold, high contrast sentence first. Then you'll read this smaller
+one at the bottom, and naturally after some time. You'll read this one at the bottom right-hand
+corner, which is in not such a great contrast color. Why? Because I have layered content like
+this. And because of visual hierarchy, the bold and prominent text grabs your attention first,
+followed by subtler elements.
+Imagine creating a New Year party invite, if all text looks identical. Reader won't know where
+to focus. Here on the left side, it says, welcome to the new year party hosted by Govind. Party
+is on first December. Midnight on first January after party at midnight. Come with your spouse
+and children for a night of frontline frolics at IIMB Party auditorium.
+All this text looks identical. The reader won't know where to focus, but by using visual
+hierarchy on the side, bold headlines, which is New Year Party with vibrant colors, it's clearly
+in contracts with the purple at the back. You can emphasize the most critical details. Like what
+is the party?
+When is it, and where is it? What are ways to create these visual hierarchy? The first of course,
+is colors using contrasting colors to highlight important elements. For example, let us look at
+this Here we have two invites of the same size text. The headings are of the same size. The
+smaller sentences are of the same size but look at how in the same invite example.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Colors draw attention compared to the left side on the right. Wherever there are clear
+contrasting colors, those sentences stand out and give the importance and direct your attention
+there. Similarly, see that the muted colors come with your spouse and children at the night are
+less attention seeking.
+Let us look at the example of Nykaa where add to bag, sign-in, and vitamin C moisturizer stand
+out. This shows what they're trying to do. Maybe they want you to click on those spaces and
+the product person wants to emphasize that it has vitamin C, which is why it is in that different
+color that pops out.
+The other way to introduce visual hierarchy is by using size. Let us look at this. You can see
+that here we have the same text with the same colors, but the sizes on the right-hand side impact
+and gain a lot of attention based on how big they are. Our minds naturally gravitate to the
+largest and then to the smaller ones.
+This is also used by a lot of brands. Let us look at this Go Digit website here. Clearly, they
+want to capture your registration number and your mobile number, why this is important to
+them. They will then use that information to follow up and sell to you. Because they know that
+this most important to convert a sale, they want you to focus on this, which is why those input
+fields are huge compared to everything else that is there.
+These fields are larger than most of the buttons here, most of the texture. In fact, they're at least
+half the size of Virat Kohli here. A good layout also is responsible for guiding the user's
+journey. It makes content easy to digest, a clear structure such as what is here. Provides clarity.
+In fact, after seeing many websites, people naturally expect certain portions of the websites to
+be at certain places.
+For example, people naturally expect navigation to be at the top if it is somewhere else. If it is
+in interspersed in the content, then it'll be confusing to the user. Similarly, our eyes naturally
+scan from the top left to the right. And from the top to the bottom, this is usually done in an F
+pattern where people scan this way, then go down and then scan here, then go down and scan.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+So similar to an F, or it's also sometimes in a Z pattern. They go from left to right, then
+diagonally towards the left bottom, and then again left to right. So as a Z pattern, we must take
+advantage of that. Do not put content in the opposite direction. Put content where they will
+glance first. Put it where their attention naturally goes first.
+Let's look at a few examples here, times of India, I believe there's a very bad structure. It is just
+cluttered; it is full of content everywhere. There are advertisements popping up the menu
+somewhere in the middle. While you would expect navigation to be at the top, it instead has
+this addition IN and then datetime at the top.
+No one expects datetime at the top. In fact, you'll just see at the bottom right corner, because
+naturally that is where it'll be in your laptop or in your computer. No one expects share buttons
+for Facebook, Twitter, at the top right. Typically, you expect it towards the right edge of the
+screen. Also, there's a lot of content here.
+There's so many things happening. And sentences that are here are so short that they're not even
+complete. You can see how Acasa is dealing with gritty com competitors and regulatory.dot
+dot. So, this content is not really great. It overwhelms the user and discourages reading in fact,
+this is a little better.
+The Hindu website is a little better structure. There's nothing popping out right away.
+Navigation has a hamburger menu on the top left-hand corner. Login is clearly at the right and
+your logo is in the middle, which is much more like what a person expects and how it should
+be structured. Here, content is broken down clearly into premium on the left side, latest news
+on the right side, and then main topics in the middle.
+Breaking content into smaller paragraphs interspersed with images or visuals is great. This is
+why this layout of TechCrunch, I believe is a very good layout. Clearly, the logo is at the top
+left-hand corner. Your menu has a hamburger menu on the top right-hand corner, which is what
+we expect in desktops, as well as in mobiles.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+There is sign in and search button there. All categories are there at the top, clearly put out. And
+here content is so well broken down. The biggest one is on the left-hand side. Because you're
+naturally scanning from the left side to the right and with the largest text, and it has an image
+as well. Then there are smaller screens and top headlines towards the rightmost corner and one
+advertisement, in your first glance, it is at the bottom right-hand corner, which you don't really
+want, but is still there because they want to also make money. So, such a balanced use of text
+and visuals with appropriate spacing creates a clean, modern design. Similarly, you can look
+at Google News, I believe this is also really good.
+Topics can be searched at the top and topics are found here. The, and it says your briefing, it
+kind, it, it makes repeat, it makes me feel that this personalized for me. And then there's top
+stories clearly put out as a card. And on the right-hand side, there are smaller content for local
+news. I don't believe Wikipedia is that good of a website.
+In fact, it is. It, it can improve a lot. Why? Because it has monotonous blocks of texts. Single
+lines are so huge, so long it overwhelms the user and discourages reading. Have you ever
+struggled to read long unbroken lines? That's because there's an ideal length for readability. So,
+sentence sizes matter a lot for readability and structure itself.
+The ideal line length for readability is between 40 to 60 characters per line, too long as you see
+here, and eyes start to lose track too short, and then the reading feels choppy, like what we saw
+in the Times of India website. Let us compare these two examples now on Wikipedia itself.
+Compared to this large sentence that we had on the specific page, having shorter sentences is
+much easier to read.
+Let me read this out quickly. In France, Dominic Pelico and 49 other men were convicted of
+serial and so on, right? So, this, as you see, is much more easier to read, but something larger
+gets a little more difficult. This may show a close emotional bond between the humans and the
+dog, and possibly and so on, but very long texts such as osteo arthritis along with signs of
+whatever indicate that some dogs survive.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+So, these long sentences make it difficult to follow and track. Also, the next thing that makes
+things look professional is alignment. Alignment is one of the simplest ways to elevate your
+design. Let us look at the same invite example with different alignments. Here, first we see that
+this invite just looks out of place.
+Some text is in the middle, it is centered. Some text is somewhere towards the left, some other
+text is completely towards the left, and frankly this is jarring and it creates discord in the mind.
+Here, if I central line everything it is much better. It seems way better ordered. I could also do
+it left headline, and this is also ordered.
+I can clearly track and see what is happening, so therefore, a mix of differently aligned titles is
+bad. This, as we saw in the first example, creates a lot of visual discord, but good alignment
+uses consistently aligned elements. Along a single axis, so it could just be center line all along
+the center or left aligned that all start towards the left.
+The tip here is that you should reduce alignment points in the first. There's a central line left
+aligned, and then there are aligned at different places as well. Reduce such alignment points.
+While designing posters or presentations ensures items align along a few clean grid lines, it
+makes your content polished.
+Finally, white spaces they let your design breathe. White space isn't just empty space. It's an
+essential design element. It prevents clutter and directs focus to what truly matters if you go
+into a luxury shop, typically products are spaced out with ample space for breathing room. This
+makes them feel premium, but if you go into someplace like DMart or some departmental store
+selling commodity, it is crowded.
+They're just put together because they're just sold on price and what is cheaper, and that
+naturally makes you feel that a product is way more cheaply priced. This principle applies to
+UI design as well. Websites with fewer ads or distractions or something like apples, which has
+a lot of white spaces, feels more sophisticated and valuable compared to websites with a lot of
+cluttered information screaming for attention.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Finally, always design for your audience. You must design such that it resonates with the
+people that your website is meant for. If it's a children's website, make it vibrant. Add playful
+colors and bold typography, or even comic typography. If it's for corporate users, have
+minimalistic professional layouts with subdued colors.
+Maybe if you're creating finance or legal websites, ensure that you bring that aspect in. For ecommerce websites, let it be eye-catching buttons and visuals that drive purchase. As designers,
+we can't stick to one style. A teenage fashion site needs to feel trendy and dynamic. While a
+medical website demands clarity and trustworthiness.
+Therefore, always tailor everything from colors, fonts, the content that you put in what you
+want to drive, tailor all of them to fit your audience. To conclude, we saw how visual hierarchy
+guides user attention. We also saw how layout, alignment and white spaces structure your
+content effectively, create harmony, and then let your design breathe.
+By mastering these elements, you'll be well on your way to create stunning and functional user
+interfaces. Thank you, and let's start designing smarter and better websites. See you in the next
+video. 
+
+
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+Mobile Vs Desktop
+Hi. In this video we will dive into one of the most important aspects, mobile versus desktop
+design considerations. As we all know, the way users interact with the desktop website is very
+different from how we interact with a mobile app or a mobile site. With the rise of smartphones
+in India designing for both platforms is no longer optional, it is essential. To illustrate these
+points, I'll show you examples from popular platforms like Amazon and Flipkart. We will
+compare their websites side by side and see what are the differences that they've done. Desktops
+have larger screens; therefore, these larger screens allow for more detailed layouts and multiple
+elements displayed side by side.
+Look at this Amazon's homepage on a desktop site. It is wide. That's why you have four
+different side-by-side placed items and multiple grids. A scrollable bar that shows many items
+and then different categories. The categories are showed at the top. Everything is displayed at
+the top. It has a prominent search bar.
+These key categories ensure that users can quickly find what they want. But on mobile you will
+see that all categories are not displayed. Instead, there is of course, this prominent search bar,
+so they believe that instead of users navigating and going through, they'll directly search for
+what they want.
+Categories are found when you click on shop by category, they're not always shown right at
+the top. Items that are shown are probably just one card and then a card below that. You can
+look at this one Flipkart as well. Each card takes its entire width and then it's automatically
+scrolling. Categories are at the bottom and they're more visual based.
+Therefore, layout needs to adapt to fit the screen size. Use responsive designs to ensure that the
+content adjusts seamlessly between devices. Here, as we saw layout can accommodate a lot
+more, but here layout cannot accommodate that much. Right. The next is navigation on desktop
+users can easily access the top navigation bar with dropdown menus.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+I can just hover over it and there are dropdown menus that show everything that I want. It
+makes it convenient to browse multiple categories. Here on Flipkart, we see prominent
+categories, fashion, electronics, home appliances, and all with subcategories prominently
+shown. On mobile devices, they rely on hamburger menus to show different options.
+They show categories in smaller sizes, but just prominent. You can't hover and see
+subcategories. Those subcategories are probably given at at the product page where you can
+filter not even on the second page. Mobile devices rely on hamburger menus or bottom
+navigation bars to save space. Therefore, simplify navigation for mobile.
+Use collapsible menus or sticky navigation bars to improve accessibility without overwhelming
+users. The next point to consider is touch versus click. Desktops use mouse or trackpad, making
+precision clicks easy. If you go into a product in Amazon, let us look at this product, this helmet.
+This button could actually be much larger, but it is small. If I want to see ratings, this is such a
+small thing, but because they know that I'm on desktop and I can use a mouse and because
+mouses provide precision and I can perfectly click, it is okay if it is still small. This dropdown
+is small, but the same on the mobile needs to be bigger.
+You will see. There you go. These buttons are larger here. Why? Because your thumb cannot
+always precisely click. Mobile devices often rely on touch gestures, so buttons and interactive
+elements need to be larger and spaced appropriately.
+Design taps friendly buttons and ensure that you have enough padding to prevent accidental
+clicks or missed clicks in mobile. Another point to consider is speed and performance. Desktop
+often have faster internet connections and better processing power. Therefore, you can show
+heavier websites with more features.
+Flipkart's desktop website shows a lot of products in high resolution images, dynamic ads,
+you'll sometimes find popups with videos on websites, detailed listings. And the, they all load
+very quickly, but their mobile website will not have a lot of that. Mobile users typically rely on
+4G networks currently, and therefore they could be inconsistent as well.
+
+ Website Development
+ Govind Shenoy
+ Module 2
+© All Rights Reserved. This document has been authored by Govind Shenoy and is permitted for use only within the course "Website
+Development" delivered in the online course format by IIM Bangalore. No part of this document, including any logo, data, illustrations, pictures,
+scripts, may be reproduced, or stored in a retrieval system or transmitted in any form or by any means – electronic, mechanical, photocopying,
+recording or otherwise – without the prior permission of the author.
+So mobile designs need to prioritize speed and performance. They will compress their images,
+they will reduce animations to ensure faster loading on mobile devices. Therefore, optimize
+images and reduce heavy scripts for mobile users to ensure a smooth experience. Finally,
+desktops allow for complex interactions as I showed previously.
+I can hover over categories to reveal sub menus of specific product types, but hover effects do
+not exist on mobile. Instead, interactions must be intuitive and touch friendly. That is why you
+will see something like swipe from the left to get the menu. Instead of hover-based interactions.
+So, the takeaway, know what interactions are possible on which device, and based on those
+create mobile friendly alternatives, such as tab swipes or accordions to conclude to create
+seamless user experiences.
+It is crucial to understand the differences in how users interact with mobile and desktop
+platform. Always test your designs on both devices to ensure consistency and usability. By
+tailoring your approach from layouts to navigations, you can cater to the unique strength and
+limitations of each platform.
+Remember, in India where mobile usage is booming. Optimizing for mobile isn't just a good
+idea, it is a necessity. It is essential. Thank you. And let's make all our designs work beautifully
+across all screens. See you in the next video. 
+
+
+3.0 Welcome to the Module
+, Incomplete
+3.1 Introduction to HTML
+, Incomplete
+3.2 HTML Elements
+, Incomplete
+3.3 HTML Structure
+, Incomplete
+3.4 Indent
+, Incomplete
+3.5 Paragraph Tag
+, Incomplete
+3.6 Closing tag
+, Incomplete
+3.7 Ordered and Unordered list
+, Incomplete
+3.8 Webpage Example
+, Incomplete
+3.9 Anchor Tag
+, Incomplete
+3.10 Image Tag
+, Incomplete
+3.11 HTML Comments
+, Incomplete
+3.12 Inline blocks
+, Incomplete
+3.13 Forms
+, Incomplete
+3.14 Buttons
+, Incomplete
+3.15 Submit and Names
+, Incomplete
+3.16 Forms Example
+, Incomplete
+3.17 Tables
+, Incomplete
+3.18 Semantic HTML
+, Incomplete
+3.19 File path and details
+, Incomplete
+3.20 Webpage and connection
+, Incomplete
+3.21 Hosting Website
+, Incomplete
+3.22 Resume Website
+, Incomplete
+3.23 Learning Interludes
+, Incomplete
+3.24 Key Takeaways
+, Incomplete
+
+
+4.0 Welcome to the Module
+, Incomplete
+4.1 Introduction to CSS
+, Incomplete
+4.2 Ways to add CSS
+, Incomplete
+4.3 Syntax and Selectors
+, Incomplete
+4.4 Tools and References
+, Incomplete
+4.5 Colors and Fonts
+, Incomplete
+4.6 CSS Inspection
+, Incomplete
+4.7 Box Model
+, Incomplete
+4.8 CSS Cascade and Specificity
+, Incomplete
+4.9 Combining CSS Selectors
+, Incomplete
+4.10 Pseudo Selectors
+, Incomplete
+4.11 Inheritance
+, Incomplete
+4.12 Span
+, Incomplete
+4.13 Display Property
+, Incomplete
+4.14 Position Property
+, Incomplete
+4.15 Float and Clear
+, Incomplete
+4.16 Website Style
+, Incomplete
+4.17 Learning Interludes
+, Incomplete
+4.18 Key Takeaways
+, Incomplete
+5.0 Welcome to Module
+, Incomplete
+5.1 Styling tips and resources
+, Incomplete
+5.2 Flexbox and Grid layout systems
+, Incomplete
+5.3 Responsive design and media queries
+, Incomplete
+5.4 Introduction to CSS frameworks (Bootstrap/Tailwind)
+, Incomplete
+5.5 Summary
+, Incomplete
+5.6 Learning Interludes
+, Incomplete
+5.7 Key Takeaways
+, Incomplete
+6.0 Welcome to Module
+, Incomplete
+6.1 JavaScript Fundamentals
+, Incomplete
+6.2 Data Types and Variables
+, Incomplete
+6.3 Strings and Numbers
+, Incomplete
+6.4 Control Flow
+, Incomplete
+6.5 Arrays
+, Incomplete
+6.6 Objects
+, Incomplete
+6.7 Loops
+, Incomplete
+6.8 Functions
+, Incomplete
+6.9 Learning Interludes
+, Incomplete
+6.10 Key Takeaways

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Notes &amp; Essays (13) — Jay Parmar</title>
+  <meta name="description" content="13 long-form essays by Jay Parmar on AI systems, digital sovereignty, healthcare AI governance, and institutional leadership.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Web Fonts: Editorial Serif + Humanist Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Specific styling for long-form reading experience */
+    .articles-hero {
+      padding: var(--space-2xl) 0 var(--space-xl);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .articles-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: var(--space-2xl);
+    }
+    .filter-btn {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-card);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-gold);
+      color: var(--bg-black);
+      border-color: var(--accent-gold);
+    }
+    .essay-item-container {
+      margin-bottom: var(--space-xl);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--transition-normal);
+    }
+    .essay-item-container:hover {
+      border-color: var(--border-highlight);
+    }
+    .essay-summary-toggle {
+      padding: var(--space-xl);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      position: relative;
+    }
+    .essay-summary-toggle::-webkit-details-marker {
+      display: none;
+    }
+    .essay-summary-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+    .essay-num {
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .essay-body-content {
+      padding: 0 var(--space-xl) var(--space-xl);
+      border-top: 1px solid var(--border-subtle);
+      margin-top: var(--space-md);
+      padding-top: var(--space-lg);
+    }
+    .essay-section {
+      margin-bottom: var(--space-lg);
+    }
+    .essay-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .essay-p {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 0.75rem;
+    }
+    .essay-points-list {
+      margin: 0.75rem 0 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .essay-point-item {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      list-style-type: disc;
+    }
+    .toggle-indicator {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    details[open] .toggle-indicator {
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Scroll Reading Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/brand/jay-parmar-mark.webp" alt="Jay Parmar Logo" class="brand-logo-img">
+        <div class="brand-title">
+          <span class="brand-name">Jay Parmar</span>
+          <span class="brand-tagline">Articles &amp; Field Notes</span>
+        </div>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html#dossier-overview" class="nav-link">← Return to Resume</a>
+        <a href="index.html#dossier-builds" class="nav-link">Systems (6)</a>
+        <a href="unoptimized.html" class="nav-link">Step 1 (Raw HTML)</a>
+        <a href="comparison.html" class="nav-link">Progress Proof</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="mailto:jaydeepak2532006@gmail.com" class="btn btn-primary btn-sm">
+          <span>Let's Talk</span>
+          <span class="icon-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero section -->
+    <section class="articles-hero">
+      <span class="section-eyebrow">Notes from the Field · 2026</span>
+      <h1 class="hero-title" style="margin: 0.5rem 0 1rem;">
+        Ideas for a world <br>
+        <span class="hero-title-gradient">in motion.</span>
+      </h1>
+      <p class="section-description" style="max-width: 820px;">
+        13 long-form essays by Jay Parmar on AI systems, digital sovereignty, healthcare AI governance, institutional leadership, and quantitative economics—shaped by sessions with industry leaders, professors, and field trials.
+      </p>
+    </section>
+
+    <!-- Category filter buttons (CSS styling demonstration) -->
+    <div class="articles-filter-bar">
+      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-right: 0.5rem;">Filter:</span>
+      <button class="filter-btn active" onclick="filterArticles('all')">All Essays (13)</button>
+      <button class="filter-btn" onclick="filterArticles('Leadership')">Leadership</button>
+      <button class="filter-btn" onclick="filterArticles('AI & Strategy')">AI &amp; Strategy</button>
+      <button class="filter-btn" onclick="filterArticles('Healthcare')">Healthcare</button>
+      <button class="filter-btn" onclick="filterArticles('Career')">Career</button>
+      <button class="filter-btn" onclick="filterArticles('Banking')">Banking</button>
+      <button class="filter-btn" onclick="filterArticles('Economy')">Economy</button>
+    </div>
+
+    <!-- Articles List using semantic HTML <details> and <summary> -->
+    <div id="articles-list">
+
+      <!-- Article 01 -->
+      <article class="essay-item-container" data-category="Leadership" id="influencing-without-authority">
+        <details open>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 01 · Leadership</span>
+              <span style="color: var(--text-muted);">4 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Influencing Without Authority</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              What Florence Nightingale teaches us about clarity, evidence and moving a room when the title is not yours.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“Nightingale did not out-rank the colonel. She out-clarified him.”</div>
+            <div class="essay-section">
+              <p class="essay-p">She had no title. No budget. No authority. Just a notebook, three coloured pens, and a hospital full of dying soldiers nobody would listen to her about.</p>
+              <p class="essay-p">At a session with Prof. Rakesh Godhwani at IIM Bangalore, I learned the deeper story behind Florence Nightingale—not only the lady with the lamp, but a woman who used data visualisation to save lives.</p>
+            </div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">The evidence changed the conversation</h3>
+              <p class="essay-p">In 1854, during the Crimean War, Nightingale arrived at a military hospital in Turkey with 25 nurses and almost no formal authority. Soldiers were dying less from battle wounds than from infections spreading through filthy, poorly managed wards. When her requests to improve sanitation were dismissed, she changed her method.</p>
+              <p class="essay-p">She collected data for months: injuries, infections and deaths. Then she translated it into a hand-drawn polar-area chart—the form now associated with her famous rose diagrams. The visual made a complex pattern immediately legible. Evidence accomplished what repeated pleading could not.</p>
+              <ul class="essay-points-list">
+                <li class="essay-point-item">Clarity of thought</li>
+                <li class="essay-point-item">Clarity of expression</li>
+                <li class="essay-point-item">Presence</li>
+                <li class="essay-point-item">Connection</li>
+              </ul>
+            </div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">Position is not persuasion</h3>
+              <p class="essay-p">Prof. Godhwani framed influence without authority through four pillars: clarity of thought, expression, presence and connection. Nightingale did not need a higher rank to move the system; she needed a clearer case.</p>
+              <p class="essay-p">We often assume that an idea needs a title behind it before it can move a room. Nightingale had neither position nor budget, yet her work influenced hospital practice at a national scale. The lesson is simple: when authority is unavailable, make the problem impossible to misunderstand.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 02 -->
+      <article class="essay-item-container" data-category="AI & Strategy" id="digital-sovereignty-ai">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 02 · AI &amp; Strategy</span>
+              <span style="color: var(--text-muted);">13 min read · 16 July 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Digital Sovereignty in the Age of AI</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              The invisible dependency that could define the next global power shift—and why resilience matters more than isolation.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“The goal is not disconnection. It is avoiding total dependence on infrastructure you do not control and cannot replace.”</div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">The sovereignty we quietly traded away</h3>
+              <p class="essay-p">Imagine a ministry unable to open documents, a public-sector bank unable to process transactions, or a hospital locked out of its scheduling system—not because of a cyberattack, but because a foreign provider changed the commercial or geopolitical terms of access. Dramatic? Yes. Impossible? Less so than it sounds.</p>
+              <p class="essay-p">Over two decades, governments and businesses moved to global cloud platforms for good reasons: lower costs, faster innovation, strong security and continuous updates. The problem is that better gradually became irreplaceable. Microsoft, Salesforce, Google Workspace, AWS, Azure, GCP and WhatsApp now form part of the operating environment of modern economies.</p>
+            </div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">Technology is geopolitics</h3>
+              <p class="essay-p">Semiconductor export restrictions, GPU-allocation constraints and telecom-equipment bans show that technology supply chains can become foreign-policy instruments. The exposure exists even if an enterprise-software cutoff never occurs. Dependency itself is the vulnerability.</p>
+              <p class="essay-p">The strategic question is not whether global platforms are good or bad. It is whether a country can continue governing, banking, treating patients and running businesses if access changes suddenly.</p>
+            </div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">India is building more than chatbots</h3>
+              <p class="essay-p">Krutrim has moved toward cloud services and GPU infrastructure. Sarvam AI is building multilingual models, speech systems and enterprise deployments. Neysa is focusing on domestic AI-cloud infrastructure. Together they illustrate three different pieces of a sovereign stack: models, interfaces and compute.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 03 -->
+      <article class="essay-item-container" data-category="Healthcare" id="healthcare-ai-governance">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 03 · Healthcare</span>
+              <span style="color: var(--text-muted);">8 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Healthcare AI: Build Fast, Scale Safely</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Risk-based regulation, clinical co-creation and designing for the 99%—a field note on trustworthy healthcare AI.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“In healthcare, regulation should be the runway that lets innovation take off safely.”</div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">Scale requires trust</h3>
+              <p class="essay-p">Healthcare is shifting from AI experimentation to deployment at scale. But scale requires trust, and trust requires governance. The EU AI Act categorises systems by risk rather than treating every algorithm as equally dangerous.</p>
+            </div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">Design for low-resource settings</h3>
+              <p class="essay-p">Healthcare AI should not become a collection of shiny objects built only for top-tier hospitals. Its deepest value may emerge in low-resource settings: screening, triage and simple decision support for frontline workers.</p>
+              <ul class="essay-points-list">
+                <li class="essay-point-item">Triage over autonomous treatment</li>
+                <li class="essay-point-item">Simple decision support for frontline workers</li>
+                <li class="essay-point-item">Supervised use by trained professionals</li>
+                <li class="essay-point-item">Compatibility with digital public infrastructure</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 04 -->
+      <article class="essay-item-container" data-category="Healthcare" id="healthcare-ai-operations">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 04 · Healthcare</span>
+              <span style="color: var(--text-muted);">6 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Healthcare AI's First Revolution Is Time</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Before robotic surgeons, the operational wins: faster discovery, less administration and more productive diagnostic infrastructure.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“The immediate impact of AI in healthcare will not be science fiction. It will be giving time back to care.”</div>
+            <div class="essay-section">
+              <p class="essay-p">When we think of AI in medicine, we often picture robotic surgeons and futuristic diagnosis. But leaders at a recent healthcare panel focused on a more immediate frontier: operational low-hanging fruit.</p>
+              <p class="essay-p">Drug-discovery systems may compress parts of a journey that often takes a decade. Administrative automation can return nurses to the bedside. Better reconstruction and scheduling can increase daily throughput of expensive CT and MRI scanners.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 05 -->
+      <article class="essay-item-container" data-category="AI & Strategy" id="free-ai-subscriptions">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 05 · AI &amp; Strategy</span>
+              <span style="color: var(--text-muted);">7 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">The Price of 'Free' AI</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              India's AI subsidy war is not charity. It is a contest for distribution, habit, data and the next interface layer.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“You are not paying with money. You are paying with habit, context and switching cost.”</div>
+            <div class="essay-section">
+              <h3 class="essay-section-title">The OS war of 2026</h3>
+              <p class="essay-p">Indian users have received premium AI subscriptions bundled through telecom and platform offers: Jio with Gemini, Airtel with Perplexity. The prize is larger than a chatbot subscription. Whoever becomes the default assistant can sit between users and search, documents, cloud storage, work and eventually commerce.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 06 -->
+      <article class="essay-item-container" data-category="Economy" id="india-neutral-pole">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 06 · Economy</span>
+              <span style="color: var(--text-muted);">5 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">The World Is Fracturing. India Is Building.</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              A data-led view of India as a potential neutral pole in a volatile global economy.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“India is not simply an outlier in the growth story. It is increasingly one of the engines.”</div>
+            <div class="essay-section">
+              <p class="essay-p">First, strategic autonomy: India often avoids binary geopolitical alignment in favour of issue-based partnerships. Second, an investment-led cycle: public capital expenditure creates capacity beyond a single consumption season. Third, resilience across diversified trading partners.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 07 -->
+      <article class="essay-item-container" data-category="Career" id="deep-work-ai">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 07 · Career</span>
+              <span style="color: var(--text-muted);">7 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">AI Speeds Up the Surface. Depth Still Takes Work.</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Expertise is not disappearing. Its value is moving from production speed to problem selection, context and judgment.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“The skill is no longer only 'can you produce it?' It is 'do you understand what to automate and what to preserve?'”</div>
+            <div class="essay-section">
+              <p class="essay-p">Large problems are not superficial. Improving an engine, restoring soil health, or screening money laundering requires deep causal understanding. AI can accelerate secondary research, but human synthesis and field evidence decide the outcome.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 08 -->
+      <article class="essay-item-container" data-category="Leadership" id="human-ingenuity">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 08 · Leadership</span>
+              <span style="color: var(--text-muted);">6 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">When Intelligence Becomes Abundant</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Human ingenuity, the 3+1 framework and why adaptability may matter more than competing with machines.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“Do not compete with AI on raw processing. Compete on adaptability, courage and care.”</div>
+            <div class="essay-section">
+              <p class="essay-p">Sustainable career satisfaction often sits at the intersection of three conditions: excitement about the problem, pride in the work, and enough economic freedom to remove constant financial anxiety. The plus one is recognition.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 09 -->
+      <article class="essay-item-container" data-category="Career" id="interview-culture-management">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 09 · Career</span>
+              <span style="color: var(--text-muted);">10 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">The Work Behind the Interview</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Company research, culture fit, psychological safety and a more useful definition of management success.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“A company is choosing you—and you are also choosing the company.”</div>
+            <div class="essay-section">
+              <p class="essay-p">Promotion and visibility are poor measures of leadership. Better signals are whether a team meets goals, grows in capability and feels safe enough to contribute honestly. Inclusion means creating space across personality types.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 10 -->
+      <article class="essay-item-container" data-category="Leadership" id="human-strength-vuca">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 10 · Leadership</span>
+              <span style="color: var(--text-muted);">9 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">AI's Weakness Is Humanity's Strength</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Why adaptation, sense-making and seven leadership mindsets matter in a volatile world.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“When the path is hidden by fog, make sure the next step is higher than the previous one.”</div>
+            <div class="essay-section">
+              <p class="essay-p">AI is powerful, but much of its power comes from patterns in the past. In a volatile, uncertain world, yesterday's pattern is not always tomorrow's answer. Our superpower is adaptation.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 11 -->
+      <article class="essay-item-container" data-category="Banking" id="digital-bank-india">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 11 · Banking</span>
+              <span style="color: var(--text-muted);">9 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Can a Fully Digital Bank Disrupt India?</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Why India's banking future is both/and: digital scale with human trust, public rails with private innovation.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“The winners will master duality: digital and physical, efficiency and empathy, scale and trust.”</div>
+            <div class="essay-section">
+              <p class="essay-p">India has chosen a distinctive architecture: keep regulated banks central while allowing fintechs to create, compete and cooperate on common public rails (UPI, Account Aggregator, ONDC). High-value deposits still skew toward institutions offering human relationship support.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 12 -->
+      <article class="essay-item-container" data-category="Leadership" id="leadership-meraki">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 12 · Leadership</span>
+              <span style="color: var(--text-muted);">6 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">Lead With Meraki</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Five lessons on energy, discomfort, mentorship, feedback and leaving real footprints.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“Success is not only what you achieve. It is how you achieve it, who you bring along and what you leave behind.”</div>
+            <div class="essay-section">
+              <p class="essay-p">1. Be an energy giver. 2. Use discomfort as a compass. 3. Collect mentors, not only titles. 4. Know the back of your T-shirt (what people say when you are not in the room). 5. Leave real footprints through Meraki—putting your soul into the work.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Article 13 -->
+      <article class="essay-item-container" data-category="AI & Strategy" id="india-ai-opportunity">
+        <details>
+          <summary class="essay-summary-toggle">
+            <div class="essay-summary-top">
+              <span class="essay-num">Essay 13 · AI &amp; Strategy</span>
+              <span style="color: var(--text-muted);">5 min read · 2026</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.8rem; margin: 0.35rem 0;">$1.4 Trillion: India's AI Imperative</h2>
+            <p class="section-description" style="font-size: 1rem; margin: 0;">
+              Why India must create—not merely consume—the systems that may shape its next phase of growth.
+            </p>
+            <div class="toggle-indicator">Click to expand / collapse full text ▾</div>
+          </summary>
+          <div class="essay-body-content">
+            <div class="essay-quote">“If we delay, the gap widens. If we act, we lead.”</div>
+            <div class="essay-section">
+              <p class="essay-p">India cannot remain only a large market for systems created elsewhere. It needs to participate in model development, compute infrastructure, applications, standards and safety. The difference between an AI wave that widens gaps and one that expands capability will be the quality of our choices now.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top: 4rem;">
+    <div class="container" style="text-align: center;">
+      <p style="color: var(--text-muted); font-size: 0.85rem;">
+        © 2026 Jay Parmar · Field Essays &amp; Research Notes · 
+        <a href="index.html" style="color: var(--accent-gold);">Return to Main Portfolio</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Inherit Theme from localStorage
+    const savedTheme = localStorage.getItem('jay-portfolio-theme') || 'obsidian';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Scroll Reading Progress
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      if (progressBar) progressBar.style.width = progress + '%';
+    }, { passive: true });
+
+    function filterArticles(category) {
+      const items = document.querySelectorAll('.essay-item-container');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => {
+        if (btn.innerText.toLowerCase().includes(category.toLowerCase()) || (category === 'all' && btn.innerText.includes('All'))) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

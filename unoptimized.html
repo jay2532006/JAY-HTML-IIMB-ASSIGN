@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Parmar — Resume Website (Step 1: HTML Module)</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- NOTE: This file represents Step 1 of the assignment: The original unoptimized / unstyled resume website created during the HTML module -->
+  <style>
+    /* Minimal baseline styling to indicate Step 1 version banner */
+    .step-banner {
+      background-color: #ffeedb;
+      border: 2px solid #e06a3b;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+    .step-banner h4 {
+      margin: 0 0 6px 0;
+      color: #9c27b0;
+    }
+    .step-banner a {
+      font-weight: bold;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SUBMISSION COMPARISON NOTICE
+  ========================================================================= -->
+  <div class="step-banner">
+    <h4>📋 Assignment Milestone — Step 1: HTML Module Submission (Unoptimized Version)</h4>
+    <p>
+      This page demonstrates the <strong>raw, unoptimized personal resume website</strong> constructed using standard semantic HTML elements (headings, paragraphs, lists, tables, links, forms, and blockquotes) without advanced CSS styling or modern layout systems.
+    </p>
+    <p>
+      👉 <strong>Next Step Progress:</strong> 
+      <a href="index.html">Click here to view the Enhanced CSS Version (Step 2 Submission)</a> | 
+      <a href="comparison.html">View Detailed CSS Progress &amp; Concept Breakdown</a>
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION BAR
+  ========================================================================= -->
+  <header>
+    <h1>Jay Parmar</h1>
+    <p><em>AI/ML Builder · Quantitative Finance Analyst · Product Leader</em></p>
+    <p><strong>Indian Institute of Management Bangalore (IIMB)</strong> · BBA in Digital Business &amp; Entrepreneurship (2026–2029)</p>
+
+    <!-- Navigation links -->
+    <nav>
+      <p>
+        <strong>Table of Contents:</strong>
+        <a href="#about">About &amp; Summary</a> |
+        <a href="#contact-info">Contact Information</a> |
+        <a href="#education">Education</a> |
+        <a href="#experience">Work Experience</a> |
+        <a href="#projects">Key Projects</a> |
+        <a href="#achievements">Honors &amp; Awards</a> |
+        <a href="#skills">Skills &amp; Competencies</a> |
+        <a href="#certifications">Certificates</a> |
+        <a href="#contact-form">Get In Touch</a> |
+        <a href="index.html"><strong>[Switch to Styled Version]</strong></a>
+      </p>
+    </nav>
+  </header>
+
+  <hr>
+
+  <!-- =========================================================================
+       MAIN CONTENT
+  ========================================================================= -->
+  <main>
+
+    <!-- 1. EXECUTIVE SUMMARY & ABOUT -->
+    <section id="about">
+      <h2>1. Executive Summary &amp; Professional Objective</h2>
+      <p>
+        I turn complex data into decisions that move. Pursuing a BBA in Digital Business &amp; Entrepreneurship at the Indian Institute of Management Bangalore (IIMB), while actively engineering institutional AI/ML systems and quantitative financial models.
+      </p>
+      <p>
+        Recognized with national podiums including 1st Position at Techfest IIT Bombay (PackEdge - ₹47.5L savings model), National Winner at TCS Foundation Hackathon (NextGenAML - &lt;12ms anti-money laundering screening), and recipient of a ₹2L DST-NIDHI grant for ShikshaShakti.AI.
+      </p>
+      <blockquote>
+        "Technology moves quickly. Understanding still asks us to slow down."
+      </blockquote>
+    </section>
+
+    <hr>
+
+    <!-- 2. CONTACT INFORMATION -->
+    <section id="contact-info">
+      <h2>2. Contact &amp; Geographic Details</h2>
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr bgcolor="#f0f0f0">
+            <th>Contact Channel</th>
+            <th>Details / Verified Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Email Address</strong></td>
+            <td><a href="mailto:jaydeepak2532006@gmail.com">jaydeepak2532006@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td><strong>Mobile Phone</strong></td>
+            <td><a href="tel:+917773060203">+91 77730 60203</a></td>
+          </tr>
+          <tr>
+            <td><strong>Location</strong></td>
+            <td>Bhilai, Chhattisgarh, India (IST UTC+5:30)</td>
+          </tr>
+          <tr>
+            <td><strong>LinkedIn Profile</strong></td>
+            <td><a href="https://www.linkedin.com/in/jay-parmar-ai" target="_blank">linkedin.com/in/jay-parmar-ai</a></td>
+          </tr>
+          <tr>
+            <td><strong>GitHub Repository</strong></td>
+            <td><a href="https://github.com/jay2532006" target="_blank">github.com/jay2532006</a></td>
+          </tr>
+          <tr>
+            <td><strong>Resume Document</strong></td>
+            <td><a href="assets/portfolio/resume/Jay-Parmar-Resume.pdf" target="_blank">Download Official Resume (PDF)</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- 3. QUANTITATIVE IMPACT HIGHLIGHTS -->
+    <section id="metrics">
+      <h2>3. Quantitative Impact Highlights</h2>
+      <ul>
+        <li><strong>₹47.5 Lakhs:</strong> Projected annual supply chain savings via Godrej Interio PKD optimization.</li>
+        <li><strong>233 Chapters:</strong> Adaptive educational prerequisite graph mapped for ShikshaShakti.AI.</li>
+        <li><strong>&lt;12 Milliseconds:</strong> Real-time anti-money laundering transaction screening latency.</li>
+        <li><strong>3× National Podiums:</strong> 1st place finishes at premier hackathons and business challenges.</li>
+        <li><strong>Top 20 / 70,000+:</strong> Selected for Young Leadership Summit at IIM Bangalore.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- 4. FORMAL EDUCATION -->
+    <section id="education">
+      <h2>4. Formal Education</h2>
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr bgcolor="#f0f0f0">
+            <th>Degree / Program</th>
+            <th>Institution</th>
+            <th>Duration</th>
+            <th>Key Academic Distinctions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bachelor of Business Administration (BBA)</strong><br>Digital Business &amp; Entrepreneurship (DBE)</td>
+            <td>Indian Institute of Management Bangalore (IIMB)</td>
+            <td>2026 – 2029</td>
+            <td>
+              <ul>
+                <li>Selected into the Top 20 nationally at the Young Leadership Summit (from 70,000+ applicants).</li>
+                <li>National Finalist at SIPS 2026 (IIM Bangalore) &amp; AVANT Business Plan Competition (IIM Indore).</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- 5. PROFESSIONAL EXPERIENCE -->
+    <section id="experience">
+      <h2>5. Professional Experience &amp; Leadership</h2>
+
+      <!-- Experience Item 1 -->
+      <article>
+        <h3>AI &amp; Disaster Analytics Intern</h3>
+        <p><strong>Center for Disaster Management, IIT Guwahati</strong> | <em>Remote / Guwahati</em> (2025 — Present)</p>
+        <p>Built automated data pipelines consolidating social media streams, government advisories, and public datasets into real-time risk-monitoring dashboards.</p>
+        <ul>
+          <li>Designed automated ETL pipelines ingesting social, government, and open public feeds into live risk-monitoring dashboards.</li>
+          <li>Curated and structured NLP-ready pre-disaster preparedness datasets for early-warning and situational analysis.</li>
+        </ul>
+      </article>
+
+      <br>
+
+      <!-- Experience Item 2 -->
+      <article>
+        <h3>Founder &amp; Product Lead</h3>
+        <p><strong>ShikshaShakti.AI</strong> | <em>Bhilai, India</em> (2025 — Present)</p>
+        <p>Built an offline-first adaptive learning platform and prerequisite diagnostic engine funded by a ₹2L DST-NIDHI ignition grant.</p>
+        <ul>
+          <li>Architected question-generation and diagnostic engine powered by Claude API spanning 233 chapters and 157 prerequisite relationships.</li>
+          <li>Engineered an offline-first delivery model tailored for low-bandwidth classrooms, reaching TRL 4 with ₹2L DST-NIDHI grant backing.</li>
+        </ul>
+      </article>
+
+      <br>
+
+      <!-- Experience Item 3 -->
+      <article>
+        <h3>Core Coordinator, Event &amp; Logistics Management (Internship)</h3>
+        <p><strong>CSVTU-FORTE DST-NIDHI i-TBI</strong> | <em>Bhilai, India</em> (2024 — 2025)</p>
+        <p>Led vendor coordination and budget-conscious execution across startup incubation cohorts and mentoring programs.</p>
+        <ul>
+          <li>Managed vendor negotiations, procurement timelines, and end-to-end event logistics across incubation programs.</li>
+          <li>Tracked budgets against financial plan, flagged cost variances early, and maintained stakeholder reporting.</li>
+        </ul>
+      </article>
+
+      <br>
+
+      <!-- Experience Item 4 -->
+      <article>
+        <h3>Company Outreach Lead &amp; Event Management Core Coordinator</h3>
+        <p><strong>Training &amp; Placement Cell, CSVTU Bhilai</strong> | <em>Bhilai, India</em> (2024 — 2025)</p>
+        <p>Coordinated corporate outreach, vocational training allocations, and placement drive operations across students, faculty, and hiring partners.</p>
+        <ul>
+          <li>Spearheaded company outreach and onboarding for campus placement and vocational training drives.</li>
+          <li>Synchronized scheduling, logistics, and communication between student cohorts, faculty coordinators, and corporate recruiters.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- 6. SHIPPED SYSTEMS & CASE STUDIES -->
+    <section id="projects">
+      <h2>6. Shipped Systems &amp; Technical Case Studies</h2>
+
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr bgcolor="#f0f0f0">
+            <th>Project Title</th>
+            <th>Category &amp; Badge</th>
+            <th>Summary &amp; Key Evidence</th>
+            <th>Tech Stack</th>
+            <th>Deck / Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ShikshaShakti.AI</strong> (2025)</td>
+            <td>EdTech · Founder<br><em>₹2L DST-NIDHI Grant · TRL 4</em></td>
+            <td>
+              Offline-first adaptive learning platform that maps prerequisite gaps before generating targeted questions for students.
+              <ul>
+                <li>233 chapters mapped</li>
+                <li>157 prerequisite links</li>
+                <li>TRL 4 validated</li>
+              </ul>
+            </td>
+            <td>Claude API, Python, FastAPI, React, Knowledge Graph</td>
+            <td><a href="https://drive.google.com/file/d/1KB5ZEOAgdl6hEC4cCXVQ1u9I0FcxkGHx/view" target="_blank">View Case Deck</a></td>
+          </tr>
+          <tr>
+            <td><strong>PackEdge</strong> (2025)</td>
+            <td>Supply Chain · 1st Place<br><em>Techfest IIT Bombay</em></td>
+            <td>
+              Partial knock-down (PKD) packaging and logistics redesign developed for Godrej Interio to maximize truck loadability and cut freight costs.
+              <ul>
+                <li>₹47.5L projected annual savings</li>
+                <li>18.5% less volume</li>
+                <li>33% freight reduction</li>
+              </ul>
+            </td>
+            <td>ROI Modeling, Excel, Supply Chain Analytics, Unit Economics</td>
+            <td><a href="https://drive.google.com/file/d/198jU7tjaPgLchEVKDLTQ7UO2OzyOkM91/view" target="_blank">View Case Deck</a></td>
+          </tr>
+          <tr>
+            <td><strong>NextGenAML</strong> (2025)</td>
+            <td>FinTech · National Winner<br><em>TCS Foundation Winner · NIT Trichy</em></td>
+            <td>
+              Real-time anti-money-laundering screening engine combining Graph Neural Networks, XGBoost, FATF typologies, and LLM-assisted case triage.
+              <ul>
+                <li>&lt;12ms screening latency</li>
+                <li>0.78 ROC-AUC score</li>
+                <li>Neo4j Graph integration</li>
+              </ul>
+            </td>
+            <td>Python, GNN, XGBoost, Neo4j, FastAPI, Claude API</td>
+            <td><em>National Podium</em></td>
+          </tr>
+          <tr>
+            <td><strong>FDR-Setu</strong> (2026)</td>
+            <td>RegTech · SIH 2026<br><em>AICTE Hackathon</em></td>
+            <td>
+              Regulatory infrastructure layer for the institutional security-deposit lifecycle featuring two-phase settlement and audit-first architecture.
+              <ul>
+                <li>55 REST endpoints</li>
+                <li>26-table data model</li>
+                <li>Role-based audit workflows</li>
+              </ul>
+            </td>
+            <td>Python, FastAPI, SQL, React, Audit Architecture</td>
+            <td><em>SIH 2026 AICTE</em></td>
+          </tr>
+          <tr>
+            <td><strong>CryptoTrace LEA</strong> (2026)</td>
+            <td>Web3 Forensics<br><em>MHA PS 26183 · 129/129 Tests Passing</em></td>
+            <td>
+              Multi-chain cryptocurrency fraud attribution and investigation workspace built for law enforcement agencies with a 7-component risk scoring engine.
+              <ul>
+                <li>129/129 tests passing</li>
+                <li>7-component risk score</li>
+              </ul>
+            </td>
+            <td>Python, Graph Analytics, FastAPI, React, Web3 Forensics</td>
+            <td><em>SIH MHA Problem</em></td>
+          </tr>
+          <tr>
+            <td><strong>Real-time Fraud Alerts</strong> (2026)</td>
+            <td>Fraud Prevention<br><em>2× Finalist (MUJ Hack 4.0 &amp; NSUT Delhi)</em></td>
+            <td>
+              Active transaction defence layer that pauses suspicious payments in flight and triggers instant multilingual verification voice calls via Sarvam AI.
+              <ul>
+                <li>Real-time transaction pause</li>
+                <li>Multilingual Sarvam AI voice alerts</li>
+              </ul>
+            </td>
+            <td>Python, Sarvam AI, FastAPI, ML Risk Scoring</td>
+            <td><em>Fintechstico 2026</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- 7. NATIONAL HONORS & ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>7. National Honors, Competitions &amp; Rankings</h2>
+      <ol>
+        <li>
+          <strong>National Winner — TCS Foundation 36-Hour Hackathon</strong> (NIT Tiruchirappalli, 2025)<br>
+          First place nationally for NextGenAML real-time anti-money laundering transaction screening engine.
+        </li>
+        <li>
+          <strong>1st Position — PackEdge Supply Chain Challenge</strong> (Techfest, IIT Bombay, 2025)<br>
+          Winner for Godrej Interio partial knock-down packaging redesign with ₹47.5L projected annual savings.
+        </li>
+        <li>
+          <strong>Hack-LLM Winner</strong> (IIIT Delhi, 2025)<br>
+          Awarded top honors for applied LLM systems engineering and prompt optimization.
+        </li>
+        <li>
+          <strong>Top 100 in India — iDEA 2.0 AML Challenge</strong> (Union Bank of India, 2025)<br>
+          Selected among the top 100 teams nationwide for anti-money laundering algorithmic innovation.
+        </li>
+        <li>
+          <strong>Top 20 — Young Leadership Summit</strong> (IIM Bangalore, 2026)<br>
+          Selected into the top 20 nationally from over 70,000+ applicants across Indian higher education institutions.
+        </li>
+        <li>
+          <strong>5× National Finalist across Flagship Hackathons &amp; B-Plans</strong><br>
+          Finalist at SANGYAN (IIT BHU), MUJ Hack 4.0, Fintechstico 2026 (NSUT Delhi), AVANT B-Plan (IIM Indore), and SIPS 2026 (IIM Bangalore).
+        </li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <!-- 8. VERIFIED CERTIFICATES -->
+    <section id="certifications">
+      <h2>8. Verified Certificates &amp; Credentials</h2>
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr bgcolor="#f0f0f0">
+            <th>Certificate Title</th>
+            <th>Issuing Authority / Institution</th>
+            <th>Year</th>
+            <th>Document Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PackEdge — 1st Position</td>
+            <td>Techfest, IIT Bombay</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-01.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+          <tr>
+            <td>National Hackathon — First Place</td>
+            <td>TCS Foundation × NIT Trichy</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-02.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+          <tr>
+            <td>Drone Technology E-SDP</td>
+            <td>Ministry of MSME, Government of India</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-05.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+          <tr>
+            <td>GitHub Dev Days</td>
+            <td>Rungta International Skills University</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-03.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+          <tr>
+            <td>Recruitment Drive Appreciation</td>
+            <td>Codelent Technologies</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-06.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+          <tr>
+            <td>VLSI Workshop</td>
+            <td>Electromos × IIT Bhilai</td>
+            <td>2025</td>
+            <td><a href="assets/portfolio/certificates/cert-07.jpg" target="_blank">View Certificate Image</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- 9. COMPREHENSIVE SKILLS & CAPABILITIES -->
+    <section id="skills">
+      <h2>9. Technical &amp; Business Competencies</h2>
+
+      <dl>
+        <dt><strong>Data Analysis &amp; Financial Modeling:</strong></dt>
+        <dd>Power BI, Microsoft Excel, Data Pipelines, Financial Analysis, ROI Modeling, KPI Definition, Reporting Automation, Dashboard Design.</dd>
+        <br>
+        <dt><strong>Artificial Intelligence &amp; Machine Learning:</strong></dt>
+        <dd>Claude API, LLM Fine-Tuning, Machine Learning, Graph Neural Networks (GNN), Natural Language Processing (NLP), XGBoost, GenAI Applications.</dd>
+        <br>
+        <dt><strong>Software Engineering:</strong></dt>
+        <dd>Python, FastAPI, React, Neo4j Graph DB, REST APIs, SQL, System Architecture.</dd>
+        <br>
+        <dt><strong>Business &amp; Operations Leadership:</strong></dt>
+        <dd>Budget Tracking, Vendor Coordination, Stakeholder Management, Cross-Functional Team Coordination, Event Logistics.</dd>
+        <br>
+        <dt><strong>Productivity Suites:</strong></dt>
+        <dd>Microsoft Office (Word, PowerPoint, Excel, Outlook), Google Workspace.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+    <!-- 10. CONTACT FORM -->
+    <section id="contact-form">
+      <h2>10. Inquiries &amp; Get in Touch</h2>
+      <p>Send a direct inquiry or collaboration proposal:</p>
+
+      <form action="mailto:jaydeepak2532006@gmail.com" method="post" enctype="text/plain">
+        <fieldset>
+          <legend><strong>Sender Contact Form</strong></legend>
+
+          <p>
+            <label for="name">Your Full Name:</label><br>
+            <input type="text" id="name" name="name" size="40" required placeholder="e.g. Dr. Ramesh Sharma">
+          </p>
+
+          <p>
+            <label for="email">Your Email Address:</label><br>
+            <input type="email" id="email" name="email" size="40" required placeholder="e.g. ramesh@institution.edu">
+          </p>
+
+          <p>
+            <label for="subject">Inquiry Category:</label><br>
+            <select id="subject" name="subject">
+              <option value="Research Collaboration">Research Collaboration</option>
+              <option value="Startup & Venture Advisory">Startup &amp; Venture Advisory</option>
+              <option value="Financial & AI Consulting">Financial &amp; AI Consulting</option>
+              <option value="General Speaking/Invite">General Speaking / Invite</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="message">Detailed Message:</label><br>
+            <textarea id="message" name="message" rows="5" cols="45" required placeholder="Type your message here..."></textarea>
+          </p>
+
+          <p>
+            <button type="submit">Submit Inquiry (Mail Client)</button>
+            <button type="reset">Clear Form</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <!-- =========================================================================
+       FOOTER
+  ========================================================================= -->
+  <footer>
+    <p>
+      <strong>Jay Parmar</strong> — Personal Resume Website (Step 1 Baseline Submission)<br>
+      Academic Module: HTML Fundamentals | Course Assignment Submission<br>
+      Location: Bhilai, Chhattisgarh, India | Email: <a href="mailto:jaydeepak2532006@gmail.com">jaydeepak2532006@gmail.com</a>
+    </p>
+    <p>
+      <em>Notice: To see the modern, fully responsive CSS3 layout with custom typography, dark palette, CSS Grid, Flexbox, and sticky navigation, visit the 
+      <a href="index.html">Enhanced CSS Resume Version (Step 2)</a>.</em>
+    </p>
+  </footer>
+
+</body>
+</html>
