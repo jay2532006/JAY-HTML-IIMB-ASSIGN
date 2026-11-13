@@ -933,7 +933,7 @@ button, input, select, textarea {
   line-height: 1.55;
 }
 .experience-bullet::before {
-  content: 'Ã¢â‚¬Â¢';
+  content: '\2022 ';
   color: var(--accent-gold);
   font-size: 1.25rem;
   line-height: 1;
@@ -1985,9 +1985,9 @@ button, input, select, textarea {
 }
 
 .project-filter-btn.active {
-  background: var(--gradient-gold);
+  background: linear-gradient(135deg, #e8d2b7 0%, #c8a882 100%) !important;
   border-color: var(--accent-gold);
-  color: #0b0c10;
+  color: #08080a !important;
   font-weight: 700;
   box-shadow: 0 4px 16px rgba(212, 160, 23, 0.28);
 }
