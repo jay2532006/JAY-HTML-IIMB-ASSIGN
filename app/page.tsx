@@ -152,7 +152,7 @@ export default function Home() {
             </span>
             <span className="text-[clamp(2.5rem,9vw,8rem)] font-bold uppercase leading-[0.9] tracking-tight flex flex-col items-center" style={{ whiteSpace: "nowrap" }}>
               <span>PROOF</span>
-              <span>IN&nbsp;OUTCOMES</span>
+              <span>IN OUTCOMES</span>
             </span>
           </div>
         }
@@ -208,9 +208,9 @@ export default function Home() {
         <section id="contact" className="min-h-screen w-full flex items-center justify-center bg-black px-6 py-24">
           <ProfileCard
             name="Jay Parmar"
-            title="AI/ML Builder · Finance Analyst"
+            title="AI/ML Builder Â· Finance Analyst"
             handle="jay-parmar-ai"
-            status="IIM Bangalore · Bhilai"
+            status="IIM Bangalore Â· Bhilai"
             contactText="Connect"
             avatarUrl="/assets/portfolio/gallery/gallery-03.jpg"
             miniAvatarUrl="/assets/portfolio/gallery/gallery-03.jpg"
