@@ -1,22 +1,64 @@
+import dynamic from "next/dynamic";
 import FrameToFullscreen from "@/components/animations/FrameToFullscreen";
 import ScrollFloat from "@/components/animations/ScrollFloat";
 import { ScrollRevealCurtain } from "@/components/animations/ScrollRevealCurtain";
-import ScrollWarpPortal from "@/components/animations/ScrollWarpPortal";
-import ScrollFoldTransition from "@/components/animations/ScrollFoldTransition";
 import VSCodePortfolio from "@/components/ui/vscode-portfolio";
-import { SplineSceneBasic } from "@/components/ui/spline-scene-basic";
-import StoryScrollDemo from "@/components/ui/story-scroll-demo";
-import HeroParallaxDemo from "@/components/ui/hero-parallax-demo";
-import ScrollMorphSection from "@/components/ui/scroll-morph-section";
-import ScrollTiltedGridDemo from "@/components/ui/scroll-tilted-grid-demo";
-import CardCarouselDemo from "@/components/ui/card-carousel-demo";
-import LightRays from "@/components/ui/LightRays";
-import ZoomParallaxDemo from "@/components/ui/zoom-parallax-demo";
-import ResumeDossier from "@/components/ui/resume-dossier";
 import QuickConnectHero from "@/components/ui/quick-connect-hero";
-import ProfileCard from "@/components/ui/ProfileCard";
-import FooterDemo from "@/components/ui/footer-demo";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+
+// Lazy-load heavy below-the-fold 3D, WebGL, and animation components
+const SplineSceneBasic = dynamic(() => import("@/components/ui/spline-scene-basic"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-[#080808]" />,
+});
+
+const StoryScrollDemo = dynamic(() => import("@/components/ui/story-scroll-demo"), {
+  ssr: false,
+});
+
+const ScrollWarpPortal = dynamic(() => import("@/components/animations/ScrollWarpPortal"), {
+  ssr: false,
+});
+
+const HeroParallaxDemo = dynamic(() => import("@/components/ui/hero-parallax-demo"), {
+  ssr: false,
+});
+
+const ScrollMorphSection = dynamic(() => import("@/components/ui/scroll-morph-section"), {
+  ssr: false,
+});
+
+const ScrollFoldTransition = dynamic(() => import("@/components/animations/ScrollFoldTransition"), {
+  ssr: false,
+});
+
+const ScrollTiltedGridDemo = dynamic(() => import("@/components/ui/scroll-tilted-grid-demo"), {
+  ssr: false,
+});
+
+const LightRays = dynamic(() => import("@/components/ui/LightRays"), {
+  ssr: false,
+});
+
+const CardCarouselDemo = dynamic(() => import("@/components/ui/card-carousel-demo"), {
+  ssr: false,
+});
+
+const ZoomParallaxDemo = dynamic(() => import("@/components/ui/zoom-parallax-demo"), {
+  ssr: false,
+});
+
+const ResumeDossier = dynamic(() => import("@/components/ui/resume-dossier"), {
+  ssr: false,
+});
+
+const ProfileCard = dynamic(() => import("@/components/ui/ProfileCard"), {
+  ssr: false,
+});
+
+const FooterDemo = dynamic(() => import("@/components/ui/footer-demo"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -120,7 +162,6 @@ export default function Home() {
       <ScrollTiltedGridDemo />
 
       <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
-        {/* Premium light-rays backdrop â€” masked + low-saturation gold to blend with the ink palette */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -167,9 +208,9 @@ export default function Home() {
         <section id="contact" className="min-h-screen w-full flex items-center justify-center bg-black px-6 py-24">
           <ProfileCard
             name="Jay Parmar"
-            title="AI/ML Builder Â· Finance Analyst"
+            title="AI/ML Builder · Finance Analyst"
             handle="jay-parmar-ai"
-            status="IIM Bangalore Â· Bhilai"
+            status="IIM Bangalore · Bhilai"
             contactText="Connect"
             avatarUrl="/assets/portfolio/gallery/gallery-03.jpg"
             miniAvatarUrl="/assets/portfolio/gallery/gallery-03.jpg"
