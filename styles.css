@@ -1997,6 +1997,150 @@ button, input, select, textarea {
 }
 
 
+/* ==========================================================================
+   LIGHT MODE: FULL PANEL ILLUMINATION (EXECUTIVE WHITE CARD UPGRADE)
+   ========================================================================== */
+
+/* 1. Education Focus Card (IIM Bangalore) */
+[data-theme="light"] .education-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.11) !important;
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="light"] .education-degree {
+  color: #0c0b0a !important;
+}
+[data-theme="light"] .education-institution {
+  color: #9e733e !important;
+}
+[data-theme="light"] .education-badge {
+  background: #f7f4ee !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #9e733e !important;
+}
+[data-theme="light"] .education-period {
+  background: #f7f4ee !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #736b61 !important;
+}
+[data-theme="light"] .education-highlights-header {
+  color: #736b61 !important;
+}
+[data-theme="light"] .highlights-item {
+  color: #4a443c !important;
+}
+[data-theme="light"] .highlights-item svg {
+  color: #9e733e !important;
+}
+
+/* 2. Professional Experience Timeline Cards */
+[data-theme="light"] .experience-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.11) !important;
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="light"] .experience-role {
+  color: #0c0b0a !important;
+}
+[data-theme="light"] .experience-org {
+  color: #9e733e !important;
+}
+[data-theme="light"] .experience-summary {
+  color: #4a443c !important;
+}
+[data-theme="light"] .experience-period-badge {
+  background: #f7f4ee !important;
+  border: 1px solid rgba(158, 115, 62, 0.25) !important;
+  color: #9e733e !important;
+}
+[data-theme="light"] .experience-location {
+  color: #736b61 !important;
+}
+[data-theme="light"] .experience-bullets {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .experience-bullet {
+  color: #4a443c !important;
+}
+[data-theme="light"] .experience-bullet::before {
+  color: #9e733e !important;
+}
+
+/* 3. Shipped Systems & Case Study Project Cards */
+[data-theme="light"] .project-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.11) !important;
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="light"] .project-img-box {
+  background: #f7f4ee !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .project-title {
+  color: #0c0b0a !important;
+}
+[data-theme="light"] .project-category {
+  color: #9e733e !important;
+}
+[data-theme="light"] .project-year {
+  color: #736b61 !important;
+}
+[data-theme="light"] .project-metric-pill {
+  background: #f7f4ee !important;
+  border: 1px solid rgba(158, 115, 62, 0.28) !important;
+  color: #9e733e !important;
+}
+[data-theme="light"] .project-summary {
+  color: #4a443c !important;
+}
+[data-theme="light"] .project-metrics-list {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .project-metric-item {
+  color: #4a443c !important;
+}
+[data-theme="light"] .project-metric-item::before {
+  background-color: #9e733e !important;
+}
+[data-theme="light"] .project-card-footer {
+  background: #faf8f5 !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .tech-tag {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #4a443c !important;
+}
+[data-theme="light"] .project-link {
+  color: #9e733e !important;
+}
+[data-theme="light"] .project-link:hover {
+  color: #0c0b0a !important;
+}
+
+/* 4. Honors, Certificates & Skills Matrix Cards */
+[data-theme="light"] .honor-card,
+[data-theme="light"] .certificate-card,
+[data-theme="light"] .skill-category-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.05) !important;
+}
+[data-theme="light"] .honor-title,
+[data-theme="light"] .certificate-title,
+[data-theme="light"] .skill-cat-header {
+  color: #0c0b0a !important;
+}
+[data-theme="light"] .honor-index,
+[data-theme="light"] .honor-venue {
+  color: #9e733e !important;
+}
+[data-theme="light"] .skill-pill {
+  background: #f7f4ee !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #4a443c !important;
+}
+
 [data-theme="midnight"] {
   --bg-black: #050811;
   --bg-primary: #0a0f20;
