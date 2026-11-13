@@ -55,6 +55,7 @@
         <a href="#dossier-builds" class="nav-link">Systems</a>
         <a href="#dossier-honors" class="nav-link">Honors</a>
         <a href="#dossier-credentials" class="nav-link">Credentials</a>
+        <a href="#dossier-gallery" class="nav-link">Gallery</a>
         <a href="#dossier-skills" class="nav-link">Capabilities</a>
         <a href="articles.html" class="nav-link">Articles (13)</a>
         <a href="index.html" class="nav-link" style="color: #a3e635; font-weight: 700;">Studio Hero ↗</a>
@@ -834,6 +835,260 @@
     </section>
 
     <hr class="section-divider">
+
+        <!-- =======================================================================
+         CHAPTER: VERIFIED INSTITUTIONAL GALLERY & PHOTO EVIDENCE CAROUSEL
+    ======================================================================= -->
+    <section class="section" id="dossier-gallery">
+      <header class="section-header reveal">
+        <span class="section-eyebrow">Visual Evidence · Archival Gallery</span>
+        <h2 class="section-title">Institutional Moments &amp; Victory Archives</h2>
+        <p class="section-description">
+          Photographic evidence across national hackathon podiums, corporate leadership summits, regional press coverage, and institutional delegations.
+        </p>
+      </header>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filter-bar reveal">
+        <button class="gallery-filter-btn active" data-filter="all">All Archives (16)</button>
+        <button class="gallery-filter-btn" data-filter="wins">National Wins 🏆</button>
+        <button class="gallery-filter-btn" data-filter="cxo">Industry &amp; CXOs 🤝</button>
+        <button class="gallery-filter-btn" data-filter="press">Press &amp; Media 📰</button>
+        <button class="gallery-filter-btn" data-filter="summits">Institutional Summits 🏛️</button>
+      </div>
+
+      <!-- Carousel Container with Smooth Scrolling Track -->
+      <div class="gallery-carousel-wrapper reveal">
+        <button class="carousel-nav-btn prev" id="galleryPrevBtn" aria-label="Previous Slide">←</button>
+        <button class="carousel-nav-btn next" id="galleryNextBtn" aria-label="Next Slide">→</button>
+
+        <div class="gallery-carousel-track" id="galleryCarouselTrack">
+          
+          <!-- Slide 1: TCS CEO -->
+          <div class="gallery-card" data-category="wins" onclick="openLightbox('assets/carousel/carousel-09.webp', 'With TCS CEO & MD K. Krithivasan', 'National Hackathon Winner felicitation at NIT Trichy')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-09.webp" alt="With TCS CEO K. Krithivasan" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">National Podium 🏆</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">With TCS CEO &amp; MD K. Krithivasan</h3>
+              <p class="gallery-card-desc">National Hackathon First Place honor for NextGenAML graph neural network screening engine.</p>
+              <span class="gallery-card-tag">NIT Tiruchirappalli · 2025</span>
+            </div>
+          </div>
+
+          <!-- Slide 2: IIT Bombay Techfest -->
+          <div class="gallery-card" data-category="wins" onclick="openLightbox('assets/carousel/carousel-25.webp', 'PackEdge Champion — Techfest IIT Bombay', '1st Place for Godrej Interio logistics & packaging redesign')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-25.webp" alt="PackEdge 1st Place IIT Bombay" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">1st Place · Techfest 🥇</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">PackEdge — IIT Bombay Techfest</h3>
+              <p class="gallery-card-desc">Winner for Godrej Interio partial knock-down packaging redesign with ₹47.5L annual ROI.</p>
+              <span class="gallery-card-tag">IIT Bombay · 2025</span>
+            </div>
+          </div>
+
+          <!-- Slide 3: ShikshaShakti DST-NIDHI Check -->
+          <div class="gallery-card" data-category="wins" onclick="openLightbox('assets/carousel/carousel-33.webp', 'ShikshaShakti.AI — ₹2L DST-NIDHI Grant', 'Official ignition grant check presentation')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-33.webp" alt="DST NIDHI Grant Check" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Govt Grant Backing 🇮🇳</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">ShikshaShakti.AI — ₹2,00,000 Grant</h3>
+              <p class="gallery-card-desc">Official check handover from CSVTU-FORTE DST-NIDHI i-TBI incubation center.</p>
+              <span class="gallery-card-tag">DST-NIDHI Ignition Grant · 2025</span>
+            </div>
+          </div>
+
+          <!-- Slide 4: Angel One CEO -->
+          <div class="gallery-card" data-category="cxo" onclick="openLightbox('assets/carousel/carousel-24.webp', 'With Angel One CEO Ambarish Kenghe', 'Dialogue on fintech automation and quantitative algorithmic trading')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-24.webp" alt="With Angel One CEO Ambarish Kenghe" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">FinTech CXO Dialogue 💼</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">With Angel One CEO Ambarish Kenghe</h3>
+              <p class="gallery-card-desc">Discussing quantitative risk frameworks, broker architecture, and real-time market data pipelines.</p>
+              <span class="gallery-card-tag">FinTech Leadership Conclave</span>
+            </div>
+          </div>
+
+          <!-- Slide 5: The Hitavada Press -->
+          <div class="gallery-card" data-category="press" onclick="openLightbox('assets/carousel/carousel-16.webp', 'The Hitavada — Regional Press Feature', 'Print coverage highlighting algorithmic and engineering contributions')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-16.webp" alt="The Hitavada Press Coverage" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Press Coverage 📰</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">The Hitavada — Press Feature</h3>
+              <p class="gallery-card-desc">Print coverage documenting youth technology leadership, hackathon podiums, and grant achievements.</p>
+              <span class="gallery-card-tag">National Daily Circulation</span>
+            </div>
+          </div>
+
+          <!-- Slide 6: IIM Bangalore Young Leadership Summit -->
+          <div class="gallery-card" data-category="summits" onclick="openLightbox('assets/carousel/carousel-05.webp', 'IIM Bangalore — Young Leadership Summit', 'Selected in Top 20 nationally from 70,000+ applicants')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-05.webp" alt="IIM Bangalore Summit" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Top 20 of 70,000+ 🏛️</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">IIM Bangalore — Leadership Summit</h3>
+              <p class="gallery-card-desc">Selected among the top 20 candidates nationally for the executive Young Leadership Summit.</p>
+              <span class="gallery-card-tag">IIM Bangalore Bannerghatta Campus</span>
+            </div>
+          </div>
+
+          <!-- Slide 7: Dainik Bhaskar Press -->
+          <div class="gallery-card" data-category="press" onclick="openLightbox('assets/carousel/carousel-26.webp', 'Dainik Bhaskar — National Achievement Story', 'Recognizing digital education prototype and grant backing')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-26.webp" alt="Dainik Bhaskar Story" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Front Page Feature 📰</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Dainik Bhaskar — Frontline Feature</h3>
+              <p class="gallery-card-desc">National news report detailing offline diagnostic AI models deployed for rural learners.</p>
+              <span class="gallery-card-tag">National Print Media</span>
+            </div>
+          </div>
+
+          <!-- Slide 8: IIIT Delhi Hack-LLM -->
+          <div class="gallery-card" data-category="wins" onclick="openLightbox('assets/carousel/carousel-10.webp', 'Hack-LLM Winner — IIIT Delhi', 'Felicitation and trophy for generative AI prompt engine')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-10.webp" alt="Hack-LLM IIIT Delhi" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">1st Place · AI Track 🏆</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Hack-LLM Winner — IIIT Delhi</h3>
+              <p class="gallery-card-desc">Top honors for applied LLM prompt optimization and multi-agent knowledge graph generation.</p>
+              <span class="gallery-card-tag">IIIT Delhi · 2025</span>
+            </div>
+          </div>
+
+          <!-- Slide 9: Marsh McLennan Leadership -->
+          <div class="gallery-card" data-category="cxo" onclick="openLightbox('assets/carousel/carousel-14.webp', 'With Marsh McLennan Leadership', 'Executive discussion on institutional cyber-risk and insurance modeling')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-14.webp" alt="Marsh McLennan Dialogue" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Enterprise Risk 🛡️</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Marsh McLennan Leadership</h3>
+              <p class="gallery-card-desc">Executive dialogue on institutional cyber-risk underwriting, resilience indices, and insurance analytics.</p>
+              <span class="gallery-card-tag">Global Corporate Leadership</span>
+            </div>
+          </div>
+
+          <!-- Slide 10: India AI Impact Summit -->
+          <div class="gallery-card" data-category="summits" onclick="openLightbox('assets/carousel/carousel-19.webp', 'India AI Impact Summit 2026', 'National sovereign AI policy and compute infrastructure discussions')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-19.webp" alt="India AI Impact Summit" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">National Policy ⚡</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">India AI Impact Summit 2026</h3>
+              <p class="gallery-card-desc">Delegate participating in sovereign compute discussions, public digital goods, and AI governance.</p>
+              <span class="gallery-card-tag">Vigyan Bhawan · New Delhi</span>
+            </div>
+          </div>
+
+          <!-- Slide 11: Patrika Press Coverage -->
+          <div class="gallery-card" data-category="press" onclick="openLightbox('assets/carousel/carousel-20.webp', 'Patrika — Youth Tech & Innovation', 'Spotlight on state student entrepreneurship')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-20.webp" alt="Patrika Feature" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">State Spotlight 📰</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Patrika — Youth Vanguard</h3>
+              <p class="gallery-card-desc">Feature story covering startup incubation milestones, hackathon wins, and product development.</p>
+              <span class="gallery-card-tag">Regional Daily</span>
+            </div>
+          </div>
+
+          <!-- Slide 12: Reserve Bank of India Visit -->
+          <div class="gallery-card" data-category="summits" onclick="openLightbox('assets/carousel/carousel-15.webp', 'Reserve Bank of India Visit', 'Study visit on central banking clearing systems and CBDC infrastructure')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-15.webp" alt="Reserve Bank of India" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Central Banking 🏛️</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Reserve Bank of India Delegation</h3>
+              <p class="gallery-card-desc">Special institutional delegation examining payment settlement rails, high-value RTGS, and digital rupee.</p>
+              <span class="gallery-card-tag">RBI Institutional Program</span>
+            </div>
+          </div>
+
+          <!-- Slide 13: NDTV Profit -->
+          <div class="gallery-card" data-category="cxo" onclick="openLightbox('assets/carousel/carousel-22.webp', 'With NDTV Profit — Tamanna Inamdar', 'Broadcast studio interaction discussing fintech regulation')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-22.webp" alt="With NDTV Profit" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Financial Media 📺</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">With NDTV Profit — Tamanna Inamdar</h3>
+              <p class="gallery-card-desc">Studio interaction discussing fintech regulation, consumer fraud protection, and AI adoption in retail finance.</p>
+              <span class="gallery-card-tag">National Business News</span>
+            </div>
+          </div>
+
+          <!-- Slide 14: IBM Quantum Showcase -->
+          <div class="gallery-card" data-category="summits" onclick="openLightbox('assets/carousel/carousel-27.webp', 'IBM Quantum System Two Showcase', 'Exploring utility-scale quantum algorithms and quantum-safe crypto')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-27.webp" alt="IBM Quantum Showcase" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Deep Tech Frontier ⚛️</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">IBM Quantum System Two Showcase</h3>
+              <p class="gallery-card-desc">Inspecting utility-scale quantum processors, cryogenic infrastructure, and quantum-safe algorithmic migration.</p>
+              <span class="gallery-card-tag">Deep Tech Industry Forum</span>
+            </div>
+          </div>
+
+          <!-- Slide 15: FDR-Setu SIH Defense -->
+          <div class="gallery-card" data-category="wins" onclick="openLightbox('assets/carousel/carousel-32.webp', 'FDR-Setu Defense — Smart India Hackathon', 'National jury defense for escrow infrastructure')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-32.webp" alt="FDR-Setu SIH" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">National Finalist 🎖️</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Smart India Hackathon National Final</h3>
+              <p class="gallery-card-desc">Presenting FDR-Setu two-phase institutional security deposit platform to the national AICTE jury.</p>
+              <span class="gallery-card-tag">Ministry of Education · AICTE</span>
+            </div>
+          </div>
+
+          <!-- Slide 16: Navabharat Headline -->
+          <div class="gallery-card" data-category="press" onclick="openLightbox('assets/carousel/carousel-21.webp', 'Navabharat — Headline Victory', 'Full-column coverage on national hackathon achievement')">
+            <div class="gallery-card-img-box">
+              <img src="assets/carousel/carousel-21.webp" alt="Navabharat Coverage" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-badge">Headline Coverage 📰</span>
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Navabharat — National Win Story</h3>
+              <p class="gallery-card-desc">Special feature on triumphing over 800+ engineering teams across India in 36-hour sprint.</p>
+              <span class="gallery-card-tag">Daily Hindi Newspaper</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Interactive Lightbox Modal -->
+    <div class="gallery-modal" id="galleryModal" onclick="closeLightbox(event)">
+      <div class="gallery-modal-content">
+        <button class="gallery-modal-close" onclick="closeLightbox(event)">&times;</button>
+        <img src="" alt="" id="modalImg" class="gallery-modal-img">
+        <div class="gallery-modal-caption">
+          <h3 id="modalTitle" class="gallery-modal-title"></h3>
+          <p id="modalDesc" class="gallery-modal-desc"></p>
+        </div>
+      </div>
+    </div>
 
     <!-- =======================================================================
          CHAPTER 6: COMPREHENSIVE CAPABILITIES & SKILLS MATRIX

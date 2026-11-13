@@ -382,5 +382,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   console.log('Jay Parmar Portfolio JavaScript engine initialized — Module 6 curriculum active.');
-});
 
+  /* =========================================================================
+   * FEATURE 9: INTERACTIVE VERIFIED GALLERY CAROUSEL WITH AUTOPLAY & LIGHTBOX
+   * ========================================================================= */
+  const galleryTrack = document.getElementById('galleryCarouselTrack');
+  const galleryPrev = document.getElementById('galleryPrevBtn');
+  const galleryNext = document.getElementById('galleryNextBtn');
+  const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const galleryCards = document.querySelectorAll('.gallery-card');
+
+  if (galleryTrack) {
+    const cardScrollStep = 360;
+
+    if (galleryPrev) {
+      galleryPrev.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: -cardScrollStep, behavior: 'smooth' });
+      });
+    }
+
+    if (galleryNext) {
+      galleryNext.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: cardScrollStep, behavior: 'smooth' });
+      });
+    }
+
+    // Auto-scroll ticker with pause on hover
+    let isHovering = false;
+    galleryTrack.addEventListener('mouseenter', () => { isHovering = true; });
+    galleryTrack.addEventListener('mouseleave', () => { isHovering = false; });
+    galleryTrack.addEventListener('touchstart', () => { isHovering = true; }, { passive: true });
+    galleryTrack.addEventListener('touchend', () => { isHovering = false; }, { passive: true });
+
+    setInterval(() => {
+      if (!isHovering && galleryTrack) {
+        if (galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 10) {
+          galleryTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          galleryTrack.scrollBy({ left: cardScrollStep, behavior: 'smooth' });
+        }
+      }
+    }, 3800);
+
+    // Category Filtering
+    if (galleryFilterBtns.length > 0) {
+      galleryFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          galleryFilterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const category = btn.getAttribute('data-filter') || 'all';
+          galleryCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category') || '';
+            if (category === 'all' || cardCat.indexOf(category) !== -1) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          galleryTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        });
+      });
+    }
+  }
+
+  // Global Lightbox Handlers
+  window.openLightbox = function(src, title, desc) {
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+
+    if (modal && modalImg) {
+      modalImg.src = src;
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalDesc) modalDesc.textContent = desc;
+      modal.classList.add('active');
+    }
+  };
+
+  window.closeLightbox = function(e) {
+    if (e.target.classList.contains('gallery-modal') || e.target.classList.contains('gallery-modal-close')) {
+      const modal = document.getElementById('galleryModal');
+      if (modal) modal.classList.remove('active');
+    }
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('galleryModal');
+      if (modal) modal.classList.remove('active');
+    }
+  });
+});
