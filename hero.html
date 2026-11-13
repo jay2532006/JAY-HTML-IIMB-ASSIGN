@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Parmar — Interactive Executive Hero Workstation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #060608;
+      color: #f5f1e8;
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .hero-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 4rem;
+      position: relative;
+    }
+    .hero-header-nav {
+      width: 100%;
+      max-width: 1320px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .hero-heading-block {
+      text-align: center;
+      max-width: 900px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-title-main {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-title-highlight {
+      background: linear-gradient(135deg, #ffffff 20%, #c8a882 70%, #a3e635 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-sub-text {
+      color: #d0cbc0;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    /* 3D Interactive Mac / VS Code Window */
+    .studio-frame {
+      width: 100%;
+      max-width: 1220px;
+      background: #0d0d12;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(200, 168, 130, 0.08);
+      overflow: hidden;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+      perspective: 1200px;
+    }
+    .studio-window-bar {
+      background: #14141b;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .window-traffic-lights {
+      display: flex;
+      gap: 8px;
+    }
+    .light-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .window-title {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #8e897f;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .studio-main-grid {
+      display: grid;
+      grid-template-columns: 50px 220px 1fr 280px;
+      min-height: 520px;
+    }
+    /* Column 1: Activity Bar */
+    .activity-bar {
+      background: #101017;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 1.25rem;
+    }
+    .act-icon {
+      color: #8e897f;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .act-icon.active, .act-icon:hover {
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.1);
+    }
+    /* Column 2: File Explorer */
+    .file-explorer {
+      background: #0d0d12;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1rem 0.75rem;
+      font-size: 0.85rem;
+    }
+    .explorer-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8e897f;
+      margin-bottom: 0.75rem;
+      padding-left: 0.5rem;
+    }
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      color: #d0cbc0;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .file-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+    .file-item.active {
+      background: rgba(200, 168, 130, 0.15);
+      color: #f5f1e8;
+      border-left: 2px solid #a3e635;
+    }
+    /* Column 3: Active Editor */
+    .editor-pane {
+      background: #08080a;
+      display: flex;
+      flex-direction: column;
+    }
+    .editor-tabs {
+      background: #0d0d12;
+      display: flex;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .editor-tab {
+      padding: 0.55rem 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #8e897f;
+      background: #08080a;
+      border-top: 2px solid #a3e635;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .code-display {
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      overflow-x: auto;
+      flex: 1;
+    }
+    .line-num {
+      color: #444;
+      margin-right: 1.25rem;
+      user-select: none;
+    }
+    .kwd { color: #ff7b72; font-weight: 600; }
+    .fn { color: #d2a8ff; }
+    .str { color: #a5d6ff; }
+    .prop { color: #79c0ff; }
+    .num { color: #ffa657; }
+    .cmt { color: #8b949e; font-style: italic; }
+    /* Column 4: Executive Status Panel */
+    .status-panel {
+      background: #101017;
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .panel-widget {
+      background: #161620;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .widget-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #c8a882;
+      margin-bottom: 0.4rem;
+    }
+    .widget-metric {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .widget-tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.5rem;
+    }
+    .tool-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: #d0cbc0;
+    }
+    /* Mobile responsive */
+    @media (max-width: 900px) {
+      .studio-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .activity-bar, .file-explorer, .status-panel {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-page-wrapper">
+    <nav class="hero-header-nav">
+      <a href="index.html" class="brand-link-lockup">
+        <img src="assets/brand/jay-parmar-brand-lockup.jpg" alt="Jay Parmar" class="brand-lockup-img">
+      </a>
+      <div style="display: flex; gap: 1rem;">
+        <a href="index.html" class="btn btn-secondary btn-sm">← Back to Full Dossier</a>
+        <a href="articles.html" class="btn btn-primary btn-sm">Read Essays ↗</a>
+      </div>
+    </nav>
+
+    <div class="hero-heading-block">
+      <h1 class="hero-title-main">
+        Turning complex data into <br>
+        <span class="hero-title-highlight">Decisions that move.</span>
+      </h1>
+      <p class="hero-sub-text">
+        Interactive executive developer workstation crafted in pure semantic HTML, responsive CSS, and native JavaScript. Click through the project files to inspect live architectures and system metrics.
+      </p>
+    </div>
+
+    <!-- Interactive Studio Frame -->
+    <div class="studio-frame" id="studioFrame">
+      <div class="studio-window-bar">
+        <div class="window-traffic-lights">
+          <div class="light-dot dot-red"></div>
+          <div class="light-dot dot-yellow"></div>
+          <div class="light-dot dot-green"></div>
+        </div>
+        <div class="window-title">
+          <span>⚡</span>
+          <span id="activeFileName">jay-parmar.ts</span>
+          <span style="opacity: 0.5;">— Workspace Studio</span>
+        </div>
+        <div style="font-size: 0.75rem; color: #a3e635; font-family: 'JetBrains Mono', monospace;">● Online</div>
+      </div>
+
+      <div class="studio-main-grid">
+        <!-- Activity Bar -->
+        <aside class="activity-bar">
+          <div class="act-icon active" title="Explorer">📁</div>
+          <div class="act-icon" title="Search">🔍</div>
+          <div class="act-icon" title="Source Control">🌿</div>
+          <div class="act-icon" title="Debugger">🐞</div>
+        </aside>
+
+        <!-- File Explorer -->
+        <aside class="file-explorer">
+          <div class="explorer-heading">Core Systems</div>
+          <div class="file-item active" onclick="switchFile('profile')">📄 jay-parmar.ts</div>
+          <div class="file-item" onclick="switchFile('iimb')">🎓 iim-bangalore.md</div>
+          <div class="file-item" onclick="switchFile('aml')">🛡️ nextgen-aml.py</div>
+          <div class="file-item" onclick="switchFile('edtech')">🚀 shikshashakti.ai</div>
+          <div class="file-item" onclick="switchFile('fdr')">⚖️ fdr-setu.ts</div>
+        </aside>
+
+        <!-- Editor View -->
+        <main class="editor-pane">
+          <div class="editor-tabs">
+            <div class="editor-tab" id="tabLabel">jay-parmar.ts</div>
+          </div>
+          <pre class="code-display" id="codeContent"><span class="line-num">01</span><span class="kwd">const</span> builder = {
+<span class="line-num">02</span>  <span class="prop">name</span>: <span class="str">"Jay Parmar"</span>,
+<span class="line-num">03</span>  <span class="prop">institution</span>: <span class="str">"IIM Bangalore (BBA DBE)"</span>,
+<span class="line-num">04</span>  <span class="prop">roles</span>: [<span class="str">"AI/ML Builder"</span>, <span class="str">"Quantitative Finance Analyst"</span>],
+<span class="line-num">05</span>  <span class="prop">mission</span>: <span class="str">"Turning complex data into decisions that move"</span>,
+<span class="line-num">06</span>  <span class="prop">trackRecord</span>: {
+<span class="line-num">07</span>    <span class="prop">dstNidhiGrant</span>: <span class="num">200000</span>, <span class="cmt">// ₹2L Government of India Grant</span>
+<span class="line-num">08</span>    <span class="prop">amlLatencyMs</span>: <span class="num">12</span>,     <span class="cmt">// Sub-12ms graph fraud detection</span>
+<span class="line-num">09</span>    <span class="prop">nationalWins</span>: <span class="num">3</span>       <span class="cmt">// IIT Bombay, TCS Foundation, SIH</span>
+<span class="line-num">10</span>  }
+<span class="line-num">11</span>};</pre>
+        </main>
+
+        <!-- Executive Status Column -->
+        <aside class="status-panel">
+          <div class="panel-widget">
+            <div class="widget-title">Selected Metric</div>
+            <div class="widget-metric" id="panelMetric">₹47.5L</div>
+            <div style="font-size: 0.8rem; color: #8e897f;" id="panelDesc">Supply chain ROI optimization</div>
+          </div>
+
+          <div class="panel-widget">
+            <div class="widget-title">Tech Stack Core</div>
+            <div class="widget-tag-strip">
+              <span class="tool-tag">Python</span>
+              <span class="tool-tag">FastAPI</span>
+              <span class="tool-tag">XGBoost</span>
+              <span class="tool-tag">Neo4j GNN</span>
+              <span class="tool-tag">React</span>
+              <span class="tool-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="panel-widget">
+            <div class="widget-title">Terminal Stream</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #a3e635; line-height: 1.4;">
+              $ git status<br>
+              branch: main<br>
+              status: clean (0ms lag)
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const files = {
+      profile: {
+        name: "jay-parmar.ts",
+        metric: "₹47.5L",
+        desc: "Supply chain ROI optimization",
+        code: `<span class="line-num">01</span><span class="kwd">const</span> builder = {
+<span class="line-num">02</span>  <span class="prop">name</span>: <span class="str">"Jay Parmar"</span>,
+<span class="line-num">03</span>  <span class="prop">institution</span>: <span class="str">"IIM Bangalore (BBA DBE)"</span>,
+<span class="line-num">04</span>  <span class="prop">roles</span>: [<span class="str">"AI/ML Builder"</span>, <span class="str">"Quantitative Finance Analyst"</span>],
+<span class="line-num">05</span>  <span class="prop">mission</span>: <span class="str">"Turning complex data into decisions that move"</span>,
+<span class="line-num">06</span>  <span class="prop">trackRecord</span>: {
+<span class="line-num">07</span>    <span class="prop">dstNidhiGrant</span>: <span class="num">200000</span>, <span class="cmt">// ₹2L Government of India Grant</span>
+<span class="line-num">08</span>    <span class="prop">amlLatencyMs</span>: <span class="num">12</span>,     <span class="cmt">// Sub-12ms graph fraud detection</span>
+<span class="line-num">09</span>    <span class="prop">nationalWins</span>: <span class="num">3</span>       <span class="cmt">// IIT Bombay, TCS Foundation, SIH</span>
+<span class="line-num">10</span>  }
+<span class="line-num">11</span>};`
+      },
+      iimb: {
+        name: "iim-bangalore.md",
+        metric: "Top 20",
+        desc: "Ranked out of 70,000+ candidates",
+        code: `<span class="line-num">01</span><span class="kwd">#</span> Academic Rigor & Institution
+<span class="line-num">02</span>
+<span class="line-num">03</span><span class="str">- Institution:</span> Indian Institute of Management Bangalore
+<span class="line-num">04</span><span class="str">- Program:</span> BBA in Digital Business & Entrepreneurship (2026-2029)
+<span class="line-num">05</span><span class="str">- Selectivity:</span> Top 20 selected nationally from 70,000+ applicants
+<span class="line-num">06</span><span class="str">- Research:</span> IIT Guwahati AI Intern (Disaster Analytics)`
+      },
+      aml: {
+        name: "nextgen-aml.py",
+        metric: "<12ms",
+        desc: "Graph AML screening latency",
+        code: `<span class="line-num">01</span><span class="kwd">import</span> xgboost <span class="kwd">as</span> xgb
+<span class="line-num">02</span><span class="kwd">from</span> torch_geometric.nn <span class="kwd">import</span> GNN
+<span class="line-num">03</span>
+<span class="line-num">04</span><span class="kwd">class</span> <span class="fn">AMLScreeningEngine</span>:
+<span class="line-num">05</span>    <span class="str">"""TCS Foundation National Winner · Sub-12ms AML Triaging"""</span>
+<span class="line-num">06</span>    <span class="kwd">def</span> <span class="fn">detect_mules</span>(self, transaction_subgraph):
+<span class="line-num">07</span>        features = self.gnn_embed(transaction_subgraph)
+<span class="line-num">08</span>        fraud_prob = self.xgb_model.predict_proba(features)
+<span class="line-num">09</span>        <span class="kwd">return</span> fraud_prob > <span class="num">0.82</span>`
+      },
+      edtech: {
+        name: "shikshashakti.ai",
+        metric: "233 Chs",
+        desc: "Curriculum chapters mapped with Claude API",
+        code: `<span class="line-num">01</span><span class="cmt">// ShikshaShakti.AI · Offline-first Diagnostic Engine</span>
+<span class="line-num">02</span><span class="kwd">export const</span> DiagnosticEngine = {
+<span class="line-num">03</span>  grant: <span class="str">"₹2L DST-NIDHI Ignition Award"</span>,
+<span class="line-num">04</span>  readinessLevel: <span class="str">"TRL 4 Prototype"</span>,
+<span class="line-num">05</span>  prerequisiteGraph: <span class="num">157</span>, <span class="cmt">// Directed acyclic skill graph</span>
+<span class="line-num">06</span>  chapters: <span class="num">233</span>
+<span class="line-num">07</span>};`
+      },
+      fdr: {
+        name: "fdr-setu.ts",
+        metric: "55 APIs",
+        desc: "26-table regulatory audit data model",
+        code: `<span class="line-num">01</span><span class="cmt">// FDR-Setu Institutional Escrow Infrastructure</span>
+<span class="line-num">02</span><span class="kwd">interface</span> <span class="fn">EscrowSettlement</span> {
+<span class="line-num">03</span>  endpoints: <span class="num">55</span>;
+<span class="line-num">04</span>  tables: <span class="num">26</span>;
+<span class="line-num">05</span>  securityPhase: <span class="str">"Two-Phase Cryptographic Commit"</span>;
+<span class="line-num">06</span>  compliance: <span class="str">"SIH 2026 AICTE Architecture"</span>;
+<span class="line-num">07</span>}`
+      }
+    };
+
+    function switchFile(key) {
+      const data = files[key];
+      if (!data) return;
+      document.getElementById('activeFileName').innerText = data.name;
+      document.getElementById('tabLabel').innerText = data.name;
+      document.getElementById('codeContent').innerHTML = data.code;
+      document.getElementById('panelMetric').innerText = data.metric;
+      document.getElementById('panelDesc').innerText = data.desc;
+
+      document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+
+    // 3D Perspective Tilt on Mouse Move
+    const frame = document.getElementById('studioFrame');
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX - innerWidth / 2) / (innerWidth / 2);
+      const y = (e.clientY - innerHeight / 2) / (innerHeight / 2);
+      frame.style.transform = `rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    });
+  </script>
+</body>
+</html>
